@@ -1,0 +1,54 @@
+service: serverless-app
+
+plugins:
+ - serverless-offline
+
+provider:
+ name: aws
+ runtime: nodejs18.x
+ profile: alvaro
+
+functions:
+  # NEW SWAPI:
+  # AddFilmsNewSwapiFunction:
+  #   name: AddFilmsNewSwapiFunction
+  #   handler: src/create.handler
+  #   events:
+  #     - httpApi:
+  #         path: /films
+  #         method: post
+  
+  # OLD SWAPI:
+  GetFilmsOldSwapiFunction:
+    name: GetFilmsOldSwapiFunction
+    handler: dist/main.handler
+    timeout: 900
+    events:
+      - httpApi:
+          path: /old-swapi/films
+          method: get
+  GetFilmsByIdOldSwapiFunction:
+    name: GetFilmsByIdOldSwapiFunction
+    handler: dist/main.handler
+    timeout: 900
+    events:
+      - httpApi:
+          path: /old-swapi/films/{id}
+          method: get
+  
+  GetPeopleOldSwapiFunction:
+    name: GetPeopleOldSwapiFunction
+    handler: dist/main.handler
+    timeout: 900
+    events:
+      - httpApi:
+          path: /old-swapi/people
+          method: get
+  GetPeopleByIdOldSwapiFunction:
+    name: GetPeopleByIdOldSwapiFunction
+    handler: dist/main.handler
+    timeout: 900
+    events:
+      - httpApi:
+          path: /old-swapi/people/{id}
+          method: get
