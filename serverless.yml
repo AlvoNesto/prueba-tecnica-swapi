@@ -1,34 +1,73 @@
 service: serverless-app
 
 plugins:
- - serverless-offline
+  - serverless-offline
 
 provider:
- name: aws
- runtime: nodejs18.x
- profile: alvaro
+  name: aws
+  runtime: nodejs18.x
+  profile: alvaro
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource:
+        - !Ref StarWarsEntitiesTable.Arn
 
 functions:
-  # NEW SWAPI:
-  # AddFilmsNewSwapiFunction:
-  #   name: AddFilmsNewSwapiFunction
-  #   handler: src/create.handler
-  #   events:
-  #     - httpApi:
-  #         path: /films
-  #         method: post
+  # NEW DATA:
+  GetNewFilmsFunction:
+    name: GetNewFilmsFunction
+    handler: dist/main.handler
+    timeout: 30
+    events:
+      - httpApi:
+          path: /new/films
+          method: get
+  GetNewFilmByIdFunction:
+    name: GetNewFilmByIdFunction
+    handler: dist/main.handler
+    timeout: 30
+    events:
+      - httpApi:
+          path: /new/films/{id}
+          method: get
+  CreateNewFilmFunction:
+    name: CreateNewFilmFunction
+    handler: dist/main.handler
+    timeout: 30
+    events:
+      - httpApi:
+          path: /new/films
+          method: post
+  UpdateNewFilmFunction:
+    name: UpdateNewFilmFunction
+    handler: dist/main.handler
+    timeout: 30
+    events:
+      - httpApi:
+          path: /new/films/{id}
+          method: put
+  DeleteNewFilmFunction:
+    name: DeleteNewFilmFunction
+    handler: dist/main.handler
+    timeout: 30
+    events:
+      - httpApi:
+          path: /new/films/{id}
+          method: delete
   
-  # OLD SWAPI:
-  GetFilmsOldSwapiFunction:
-    name: GetFilmsOldSwapiFunction
+  # OLD DATA:
+  GetOldFilmsFunction:
+    name: GetOldFilmsFunction
     handler: dist/main.handler
     timeout: 30
     events:
       - httpApi:
           path: /old/films
           method: get
-  GetFilmsByIdOldSwapiFunction:
-    name: GetFilmsByIdOldSwapiFunction
+  GetOldFilmsByIdFunction:
+    name: GetOldFilmsByIdFunction
     handler: dist/main.handler
     timeout: 30
     events:
@@ -36,19 +75,48 @@ functions:
           path: /old/films/{id}
           method: get
   
-  GetPeopleOldSwapiFunction:
-    name: GetPeopleOldSwapiFunction
+  GetOldPeopleFunction:
+    name: GetOldPeopleFunction
     handler: dist/main.handler
     timeout: 30
     events:
       - httpApi:
           path: /old/people
           method: get
-  GetPeopleByIdOldSwapiFunction:
-    name: GetPeopleByIdOldSwapiFunction
+  GetOldPeopleByIdFunction:
+    name: GetOldPeopleByIdFunction
     handler: dist/main.handler
     timeout: 30
     events:
       - httpApi:
           path: /old/people/{id}
           method: get
+
+resources:
+  Resources:
+    StarWarsEntitiesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: StarWarsEntitiesTable
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: entidad
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+          - AttributeName: entidad
+            KeyType: RANGE
+    CounterStarWarsEntitiesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: "CounterStarWarsEntitiesTable"
+        AttributeDefinitions:
+          - AttributeName: entidad
+            AttributeType: S
+        KeySchema:
+          - AttributeName: entidad
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST

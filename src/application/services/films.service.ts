@@ -1,13 +1,15 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { FilmsRepository } from '../../infrastructure/repositories/films.repository';
 import { Film } from '../../domain/entities/films.entity';
+import { FilmMapper } from '../mappers/film-mapper';
 
 @Injectable()
 export class FilmsService {
-  constructor(private readonly filmRepository: FilmsRepository) {}
+  constructor(private readonly filmRepository: FilmsRepository, private readonly filmMapper: FilmMapper) {}
 
   async getAllSwapiFilms(): Promise<Film[]> {
-    return await this.filmRepository.getAllSwapiFilms();
+    const films = await this.filmRepository.getAllSwapiFilms();
+    return films.map(film => this.filmMapper.toSpanish(film))
   }
 
   async getSwapiFilmById(id: string): Promise<Film> {
@@ -15,11 +17,12 @@ export class FilmsService {
     if (!film) {
       throw new NotFoundException(`Film with ID ${id} not found`);
     }
-    return film;
+    return this.filmMapper.toSpanish(film);
   }
 
   async getAllDBFilms(): Promise<Film[]> {
-    return await this.filmRepository.getAllDBFilms();
+    const films = await this.filmRepository.getAllDBFilms();
+    return films.map(film => this.filmMapper.toSpanish(film))
   }
 
   async getDBFilmById(id: string): Promise<Film> {
@@ -27,11 +30,10 @@ export class FilmsService {
     if (!film) {
       throw new NotFoundException(`Film with ID ${id} not found`);
     }
-    return film;
+    return this.filmMapper.toSpanish(film);
   }
 
   async createDBFilm(film: Film): Promise<Film> {
-    // Aquí podrías agregar validaciones o lógica de negocio
     return await this.filmRepository.createDBFilm(film);
   }
 

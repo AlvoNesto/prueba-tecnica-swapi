@@ -1,13 +1,18 @@
 export class Film {
-    id: string;           // Identificador único (Primary Key en DynamoDB)
-    title: string;        // Título de la película
-    director: string;     // Director de la película
-    producer: string;     // Productor de la película
-    releaseDate: string;  // Fecha de lanzamiento
-    episodeId: number;    // Número de episodio
-    openingCrawl: string; // Introducción
-    createdAt: string;    // Fecha de creación del registro
-    updatedAt: string;    // Fecha de última actualización
+    title: string;
+    episode_id: number;
+    opening_crawl: string;
+    director: string;
+    producer: string;
+    release_date: string;
+    characters: Array<string>;
+    planets: Array<string>;
+    starships: Array<string>;
+    vehicles: Array<string>;
+    species: Array<string>;
+    created: string;
+    edited: string;
+    url: string;
   
     constructor(partial: Partial<Film>) {
       Object.assign(this, partial);

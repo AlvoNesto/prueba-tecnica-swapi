@@ -13,6 +13,25 @@ export class FilmsRepository implements IFilmsRepository {
     this.dynamoDb = new DynamoDB.DocumentClient();
   }
 
+  async getAllSwapiFilms(): Promise<Film[]> {
+    let response = await fetch(`${URL}/films`);
+    let currentData = await response.json();
+    let totalData = [];
+    while (currentData.next) {
+        totalData = totalData.concat(currentData.results);
+        response = await fetch(currentData.next);
+        currentData = await response.json();
+    }
+    totalData = totalData.concat(currentData.results);
+    return totalData.map(item => new Film(item));
+  }
+
+  async getSwapiFilmById(id: string): Promise<Film> {
+    const response = await fetch(`${URL}/films/${id}`);
+    const data = await response.json();
+    return new Film(data);
+  }
+
   async getAllDBFilms(): Promise<Film[]> {
     const params = { TableName: this.tableName };
     const result = await this.dynamoDb.scan(params).promise();
@@ -41,24 +60,38 @@ export class FilmsRepository implements IFilmsRepository {
     const params = {
       TableName: this.tableName,
       Key: { id },
-      UpdateExpression: 'set #title = :title, #director = :director, #producer = :producer, #releaseDate = :releaseDate, #episodeId = :episodeId, #openingCrawl = :openingCrawl, #updatedAt = :updatedAt',
+      UpdateExpression: 'set #title = :title, #episode_id = :episode_id, #opening_crawl = :opening_crawl, #director = :director, #producer = :producer, #release_date = :release_date, #characters = :characters, #planets = :planets, #starships = :starships, #vehicles = :vehicles, #species = :species, #created = :created, #updatedAt = :updatedAt, #url = :url',
       ExpressionAttributeNames: {
         '#title': 'title',
+        '#episode_id': 'episode_id',
+        '#opening_crawl': 'opening_crawl',
         '#director': 'director',
         '#producer': 'producer',
-        '#releaseDate': 'releaseDate',
-        '#episodeId': 'episodeId',
-        '#openingCrawl': 'openingCrawl',
+        '#release_date': 'release_date',
+        '#characters': 'characters',
+        '#planets': 'planets',
+        '#starships': 'starships',
+        '#vehicles': 'vehicles',
+        '#species': 'species',
+        '#created': 'created',
         '#updatedAt': 'updatedAt',
+        '#url': 'url'
       },
       ExpressionAttributeValues: {
         ':title': film.title,
+        ':episode_id': film.episode_id,
+        ':opening_crawl': film.opening_crawl,
         ':director': film.director,
         ':producer': film.producer,
-        ':releaseDate': film.releaseDate,
-        ':episodeId': film.episodeId,
-        ':openingCrawl': film.openingCrawl,
+        ':release_date': film.release_date,
+        ':characters': film.characters,
+        ':planets': film.planets,
+        ':starships': film.starships,
+        ':vehicles': film.vehicles,
+        ':species': film.species,
+        ':created': film.created,
         ':updatedAt': new Date().toISOString(),
+        ':url': film.url
       },
       ReturnValues: 'ALL_NEW',
     };
@@ -76,15 +109,4 @@ export class FilmsRepository implements IFilmsRepository {
     return true;
   }
 
-  async getAllSwapiFilms(): Promise<Film[]> {
-    const response = await fetch(`${URL}/films`);
-    const data = await response.json();
-    return data.results.map(item => new Film(item));
-  }
-
-  async getSwapiFilmById(id: string): Promise<Film> {
-    const response = await fetch(`${URL}/films/${id}`);
-    const data = await response.json();
-    return new Film(data);
-  }
 }
