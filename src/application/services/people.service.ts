@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { PeopleRepository } from '../../infrastructure/repositories/people.repository';
 import { People } from '../../domain/entities/people.entity';
 import { PeopleMapper } from '../mappers/people-mapper';
+import { PeopleDto } from '../../infrastructure/dtos/people.dto';
 
 @Injectable()
 export class PeopleService {
@@ -33,11 +34,13 @@ export class PeopleService {
     return this.peopleMapper.toSpanish(people);
   }
 
-  async createDBPeople(people: People): Promise<People> {
+  async createDBPeople(peopleDto: PeopleDto): Promise<People> {
+    const people: People = new People(peopleDto);
     return await this.peopleRepository.createDBPeople(people);
   }
 
-  async updateDBPeople(id: string, people: People): Promise<People> {
+  async updateDBPeople(id: string, peopleDto: PeopleDto): Promise<People> {
+    const people: People = new People(peopleDto);
     const existingPeople = await this.peopleRepository.getDBPeopleById(id);
     if (!existingPeople) {
       throw new NotFoundException(`People with ID ${id} not found`);

@@ -7,7 +7,8 @@ import { URL } from '../database/swapi.config';
 @Injectable()
 export class PeopleRepository implements IPeopleRepository {
   private dynamoDb: DynamoDB.DocumentClient;
-  private tableName: string = process.env.DYNAMODB_TABLE_PEOPLE;
+  private starWarsTableName: string = process.env.STAR_WARS_TABLE;
+  private counterTableName: string = process.env.COUNTER_TABLE;
 
   constructor() {
     this.dynamoDb = new DynamoDB.DocumentClient();
@@ -32,24 +33,38 @@ export class PeopleRepository implements IPeopleRepository {
     return new People(data);
   }
 
-  async getAllDBPeople(): Promise<People[]> {
-    const params = { TableName: this.tableName };
-    const result = await this.dynamoDb.scan(params).promise();
-    return result.Items.map(item => new People(item));
+  async getAllDBPeople(): Promise<People[] | null> {
+    const params = {
+      TableName: this.starWarsTableName,
+      IndexName: "EntidadIndex",
+      KeyConditionExpression: "#entidad = :entidadValue",
+      ExpressionAttributeNames: {
+        "#entidad": "entidad",
+      },
+      ExpressionAttributeValues: {
+        ":entidadValue": "people",
+      },
+    };
+    const result = await this.dynamoDb.query(params).promise();
+    return result.Items.length > 0 ? result.Items.map(item => new People(item)) : null;
   }
 
-  async getDBPeopleById(id: string): Promise<People> {
+  async getDBPeopleById(id: string): Promise<People | null> {
     const params = {
-      TableName: this.tableName,
-      Key: { id },
+        TableName: this.starWarsTableName,
+        Key: {
+            id: id,
+            entidad: "people"
+        }
     };
     const result = await this.dynamoDb.get(params).promise();
     return result.Item ? new People(result.Item) : null;
-  }
-
+}
   async createDBPeople(people: People): Promise<People> {
+    people.id = await this.getNextId();
+    people.entidad = "people";
     const params = {
-      TableName: this.tableName,
+      TableName: this.starWarsTableName,
       Item: people,
     };
     await this.dynamoDb.put(params).promise();
@@ -58,8 +73,8 @@ export class PeopleRepository implements IPeopleRepository {
 
   async updateDBPeople(id: string, people: People): Promise<People> {
     const params = {
-      TableName: this.tableName,
-      Key: { id },
+      TableName: this.starWarsTableName,
+      Key: { id, entidad: "people" },
       UpdateExpression: 'set #name = :name, #height = :height, #mass = :mass, #hair_color = :hair_color, #skin_color = :skin_color, #eye_color = :eye_color, #birth_year = :birth_year, #gender = :gender, #homeworld = :homeworld, #films = :films, #species = :species, #vehicles = :vehicles, #starships = :starships, #created = :created, #edited = :edited, #url = :url',
       ExpressionAttributeNames: {
         '#name': 'name',
@@ -106,11 +121,29 @@ export class PeopleRepository implements IPeopleRepository {
 
   async deleteDBPeople(id: string): Promise<boolean> {
     const params = {
-      TableName: this.tableName,
-      Key: { id },
+      TableName: this.starWarsTableName,
+      Key: { id, entidad: "people" },
     };
     await this.dynamoDb.delete(params).promise();
     return true;
+  }
+
+  async getNextId(): Promise<string> {
+    const params = {
+      TableName: this.counterTableName,
+      Key: { entidad: "people" },
+      UpdateExpression: 'ADD #cnt :increment',
+      ExpressionAttributeNames: {
+        '#cnt': 'counter',
+      },
+      ExpressionAttributeValues: {
+        ':increment': 1,
+      },
+      ReturnValues: 'ALL_NEW',
+    };
+    const result = await this.dynamoDb.update(params).promise();
+    console.log(result);
+    return result.Attributes.counter.toString();
   }
 
 }

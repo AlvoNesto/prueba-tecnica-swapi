@@ -1,6 +1,7 @@
-import { Controller, Get, Post, Body, Param, Put, Delete, HttpCode, HttpStatus } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Put, Delete, HttpCode, HttpStatus, UsePipes, ValidationPipe } from '@nestjs/common';
 import { FilmsService } from '../../application/services/films.service';
 import { Film } from '../../domain/entities/films.entity';
+import { FilmDto } from '../../infrastructure/dtos/film.dto';
 
 @Controller('new/films')
 export class NewFilmsController {
@@ -17,18 +18,18 @@ export class NewFilmsController {
   }
 
   @Post()
-  @HttpCode(HttpStatus.CREATED)
-  async createFilm(@Body() film: Film): Promise<Film> {
+  @UsePipes(new ValidationPipe({ transform: true }))
+  async createFilm(@Body() film: FilmDto): Promise<Film> {
     return await this.filmService.createDBFilm(film);
   }
 
   @Put(':id')
-  async updateFilm(@Param('id') id: string, @Body() film: Film): Promise<Film> {
+  @UsePipes(new ValidationPipe({ transform: true }))
+  async updateFilm(@Param('id') id: string, @Body() film: FilmDto): Promise<Film> {
     return await this.filmService.updateDBFilm(id, film);
   }
 
   @Delete(':id')
-  @HttpCode(HttpStatus.NO_CONTENT)
   async deleteFilm(@Param('id') id: string): Promise<void> {
     await this.filmService.deleteDBFilm(id);
   }

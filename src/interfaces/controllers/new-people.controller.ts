@@ -1,6 +1,7 @@
-import { Controller, Get, Post, Body, Param, Put, Delete, HttpCode, HttpStatus } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Put, Delete, HttpCode, HttpStatus, UsePipes, ValidationPipe } from '@nestjs/common';
 import { PeopleService } from '../../application/services/people.service';
 import { People } from '../../domain/entities/people.entity';
+import { PeopleDto } from '../../infrastructure/dtos/people.dto';
 
 @Controller('new/people')
 export class NewPeopleController {
@@ -17,18 +18,18 @@ export class NewPeopleController {
   }
 
   @Post()
-  @HttpCode(HttpStatus.CREATED)
-  async createPeople(@Body() people: People): Promise<People> {
+  @UsePipes(new ValidationPipe({ transform: true }))
+  async createPeople(@Body() people: PeopleDto): Promise<People> {
     return await this.peopleService.createDBPeople(people);
   }
 
   @Put(':id')
-  async updatePeople(@Param('id') id: string, @Body() people: People): Promise<People> {
+  @UsePipes(new ValidationPipe({ transform: true }))
+  async updatePeople(@Param('id') id: string, @Body() people: PeopleDto): Promise<People> {
     return await this.peopleService.updateDBPeople(id, people);
   }
 
   @Delete(':id')
-  @HttpCode(HttpStatus.NO_CONTENT)
   async deletePeople(@Param('id') id: string): Promise<void> {
     await this.peopleService.deleteDBPeople(id);
   }

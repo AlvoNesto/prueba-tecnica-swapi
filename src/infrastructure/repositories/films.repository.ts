@@ -67,7 +67,6 @@ export class FilmsRepository implements IFilmsRepository {
       TableName: this.starWarsTableName,
       Item: film,
     };
-    console.log("NEW FILM", params);
     await this.dynamoDb.put(params).promise();
     return film;
   }

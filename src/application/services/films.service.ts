@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { FilmsRepository } from '../../infrastructure/repositories/films.repository';
 import { Film } from '../../domain/entities/films.entity';
 import { FilmMapper } from '../mappers/film-mapper';
+import { FilmDto } from '../../infrastructure/dtos/film.dto';
 
 @Injectable()
 export class FilmsService {
@@ -33,11 +34,13 @@ export class FilmsService {
     return this.filmMapper.toSpanish(film);
   }
 
-  async createDBFilm(film: Film): Promise<Film> {
+  async createDBFilm(filmDto: FilmDto): Promise<Film> {
+    const film: Film = new Film(filmDto);
     return await this.filmRepository.createDBFilm(film);
   }
 
-  async updateDBFilm(id: string, film: Film): Promise<Film> {
+  async updateDBFilm(id: string, filmDto: FilmDto): Promise<Film> {
+    const film: Film = new Film(filmDto);
     const existingFilm = await this.filmRepository.getDBFilmById(id);
     if (!existingFilm) {
       throw new NotFoundException(`Film with ID ${id} not found`);

@@ -1,4 +1,6 @@
 export class People {
+    id: string;
+    entidad: string;
     name: string;
     height: string;
     mass: string;

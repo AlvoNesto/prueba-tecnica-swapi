@@ -1,6 +1,7 @@
 service: serverless-app
 
 # plugins:
+#   - serverless-openapi-documentation
 #   - serverless-offline
 
 provider:
@@ -21,6 +22,75 @@ provider:
             - ""
             - - !GetAtt StarWarsEntitiesTable.Arn
               - "/index/EntidadIndex" 
+
+custom:
+  documentation:
+    api:
+      info:
+        title: My API
+        version: '1.0.0'
+        description: API documentation for my serverless application.
+      paths:
+        /new/films:
+          get:
+            summary: Get all custom new films
+            description: Retrieve a list of custom new films.
+            responses:
+              '200':
+                description: Successful response
+          post:
+            summary: Create a custom new film
+            description: Create a custom new film.
+            responses:
+              '201':
+                description: Film created successfully
+        /new/films/{id}:
+          get:
+            summary: Get a custom new film by its id
+            description: Retrieve a custom new film by its id.
+            responses:
+              '200':
+                description: Successful response
+          put:
+            summary: Update a custom new film
+            description: Update a custom new film.
+            responses:
+              '200':
+                description: Successful response
+          delete:
+            summary: Delete a custom new film
+            description: Delete a custom new film.
+            responses:
+              '204':
+                description: Film deleted successfully
+        /old/films:
+          get:
+            summary: Get all films from original swapi
+            description: Get all films from original swapi.
+            responses:
+              '200':
+                description: Successful response
+        /old/films/{id}:
+          get:
+            summary: Get a film from original swapi by its id
+            description: Get a film from original swapi by its id.
+            responses:
+              '200':
+                description: Successful response
+        /old/people:
+          get:
+            summary: Get all people from original swapi
+            description: Get all people from original swapi.
+            responses:
+              '200':
+                description: Successful response
+        /old/people/{id}:
+          get:
+            summary: Get people from original swapi by its id
+            description: Get people from original swapi by its id.
+            responses:
+              '200':
+                description: Successful response
 
 functions:
   # NEW DATA:

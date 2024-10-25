@@ -283,7 +283,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -312,7 +312,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -341,7 +341,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -370,7 +370,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -399,7 +399,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -428,7 +428,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -457,7 +457,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -486,7 +486,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -515,7 +515,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -539,94 +539,94 @@
                 "GetOldPeopleByIdFunctionLogGroup"
               ]
             },
-            "GetNewFilmsFunctionLambdaVersionkZVsaQQLqrZei5oyRTNNRkc6sjLtw1Phk15iYH8BTRQ": {
+            "GetNewFilmsFunctionLambdaVersionPhS6P45b0HV4z9ittNoFUqH1r7Dyp5iajOkah0j0": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetNewFilmsFunctionLambdaFunction"
                 },
-                "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
+                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
               }
             },
-            "GetNewFilmByIdFunctionLambdaVersionsPnE9FgbnR3EYUq0zYfhBxEQPCLdZxZccu5P3Zc": {
+            "GetNewFilmByIdFunctionLambdaVersionHtYkUudlby4xLMZSa2T6m22QG31TtvcAxwXJdjyuQ": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetNewFilmByIdFunctionLambdaFunction"
                 },
-                "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
+                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
               }
             },
-            "CreateNewFilmFunctionLambdaVersionQisd6ekzyFONwoRoW7s5MXVOBegdLoFVG45TXCtE7SA": {
+            "CreateNewFilmFunctionLambdaVersionA3jKUTtq7lUnq0OMg3LdWSKSGxaoYM5m7SqAT2L31o": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "CreateNewFilmFunctionLambdaFunction"
                 },
-                "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
+                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
               }
             },
-            "UpdateNewFilmFunctionLambdaVersionUFAYpgsx5AFXIZyftzAoCLSIeIRetIpmLucZiBI": {
+            "UpdateNewFilmFunctionLambdaVersion6IIuc2NnSL7b6rPkBPgnuoCoX4QrEq3hllaUiihHc": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "UpdateNewFilmFunctionLambdaFunction"
                 },
-                "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
+                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
               }
             },
-            "DeleteNewFilmFunctionLambdaVersionUQ7jAedTdSWXT1CedV6OpDVDQqqx6aw7hC8VmlvI": {
+            "DeleteNewFilmFunctionLambdaVersionIkUARWISI918PBK7qZ4L65ChUHBNiRr2KD2cdvnu4": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "DeleteNewFilmFunctionLambdaFunction"
                 },
-                "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
+                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
               }
             },
-            "GetOldFilmsFunctionLambdaVersion6iAwXxp2cFCtyN070VPK4qufBIq3CFjS8mNurYlGmj4": {
+            "GetOldFilmsFunctionLambdaVersionXobOsvrMhwmYe810ui3fA4thbx6OlLG74IiMGZWQ": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetOldFilmsFunctionLambdaFunction"
                 },
-                "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
+                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
               }
             },
-            "GetOldFilmsByIdFunctionLambdaVersion3SRc4twAIS42TfIiEgOlYbdZ1QFhiBdIsEwzlTKkvns": {
+            "GetOldFilmsByIdFunctionLambdaVersion6Qk9ekA6e9OvQKBFjvOp23woSM57lsrRHZAPKpGAIM": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetOldFilmsByIdFunctionLambdaFunction"
                 },
-                "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
+                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
               }
             },
-            "GetOldPeopleFunctionLambdaVersionLGsQI4WPW11fKTQnigqog1Bzxxy8nGT5nWFUcKdYW7c": {
+            "GetOldPeopleFunctionLambdaVersionR53FxVh5vzqI1AkoozaWxThNR7P8u98xuNu9Fusbm8": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetOldPeopleFunctionLambdaFunction"
                 },
-                "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
+                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
               }
             },
-            "GetOldPeopleByIdFunctionLambdaVersionufB6l3ygMorWLAzF8bz20Aer5mQaE0As0uTKkbIeU": {
+            "GetOldPeopleByIdFunctionLambdaVersioni7KoJhk2BVN0zJKWuJYvOyI5ddfTE2OeFUauxKuYg": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetOldPeopleByIdFunctionLambdaFunction"
                 },
-                "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
+                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
               }
             },
             "HttpApi": {
@@ -1395,7 +1395,7 @@
             "GetNewFilmsFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetNewFilmsFunctionLambdaVersionkZVsaQQLqrZei5oyRTNNRkc6sjLtw1Phk15iYH8BTRQ"
+                "Ref": "GetNewFilmsFunctionLambdaVersionPhS6P45b0HV4z9ittNoFUqH1r7Dyp5iajOkah0j0"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-GetNewFilmsFunctionLambdaFunctionQualifiedArn"
@@ -1404,7 +1404,7 @@
             "GetNewFilmByIdFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetNewFilmByIdFunctionLambdaVersionsPnE9FgbnR3EYUq0zYfhBxEQPCLdZxZccu5P3Zc"
+                "Ref": "GetNewFilmByIdFunctionLambdaVersionHtYkUudlby4xLMZSa2T6m22QG31TtvcAxwXJdjyuQ"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-GetNewFilmByIdFunctionLambdaFunctionQualifiedArn"
@@ -1413,7 +1413,7 @@
             "CreateNewFilmFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "CreateNewFilmFunctionLambdaVersionQisd6ekzyFONwoRoW7s5MXVOBegdLoFVG45TXCtE7SA"
+                "Ref": "CreateNewFilmFunctionLambdaVersionA3jKUTtq7lUnq0OMg3LdWSKSGxaoYM5m7SqAT2L31o"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-CreateNewFilmFunctionLambdaFunctionQualifiedArn"
@@ -1422,7 +1422,7 @@
             "UpdateNewFilmFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "UpdateNewFilmFunctionLambdaVersionUFAYpgsx5AFXIZyftzAoCLSIeIRetIpmLucZiBI"
+                "Ref": "UpdateNewFilmFunctionLambdaVersion6IIuc2NnSL7b6rPkBPgnuoCoX4QrEq3hllaUiihHc"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-UpdateNewFilmFunctionLambdaFunctionQualifiedArn"
@@ -1431,7 +1431,7 @@
             "DeleteNewFilmFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "DeleteNewFilmFunctionLambdaVersionUQ7jAedTdSWXT1CedV6OpDVDQqqx6aw7hC8VmlvI"
+                "Ref": "DeleteNewFilmFunctionLambdaVersionIkUARWISI918PBK7qZ4L65ChUHBNiRr2KD2cdvnu4"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-DeleteNewFilmFunctionLambdaFunctionQualifiedArn"
@@ -1440,7 +1440,7 @@
             "GetOldFilmsFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetOldFilmsFunctionLambdaVersion6iAwXxp2cFCtyN070VPK4qufBIq3CFjS8mNurYlGmj4"
+                "Ref": "GetOldFilmsFunctionLambdaVersionXobOsvrMhwmYe810ui3fA4thbx6OlLG74IiMGZWQ"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-GetOldFilmsFunctionLambdaFunctionQualifiedArn"
@@ -1449,7 +1449,7 @@
             "GetOldFilmsByIdFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetOldFilmsByIdFunctionLambdaVersion3SRc4twAIS42TfIiEgOlYbdZ1QFhiBdIsEwzlTKkvns"
+                "Ref": "GetOldFilmsByIdFunctionLambdaVersion6Qk9ekA6e9OvQKBFjvOp23woSM57lsrRHZAPKpGAIM"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-GetOldFilmsByIdFunctionLambdaFunctionQualifiedArn"
@@ -1458,7 +1458,7 @@
             "GetOldPeopleFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetOldPeopleFunctionLambdaVersionLGsQI4WPW11fKTQnigqog1Bzxxy8nGT5nWFUcKdYW7c"
+                "Ref": "GetOldPeopleFunctionLambdaVersionR53FxVh5vzqI1AkoozaWxThNR7P8u98xuNu9Fusbm8"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-GetOldPeopleFunctionLambdaFunctionQualifiedArn"
@@ -1467,7 +1467,7 @@
             "GetOldPeopleByIdFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetOldPeopleByIdFunctionLambdaVersionufB6l3ygMorWLAzF8bz20Aer5mQaE0As0uTKkbIeU"
+                "Ref": "GetOldPeopleByIdFunctionLambdaVersioni7KoJhk2BVN0zJKWuJYvOyI5ddfTE2OeFUauxKuYg"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-GetOldPeopleByIdFunctionLambdaFunctionQualifiedArn"
@@ -1511,6 +1511,112 @@
         },
         "vpc": {}
       },
+      "custom": {
+        "documentation": {
+          "api": {
+            "info": {
+              "title": "My API",
+              "version": "1.0.0",
+              "description": "API documentation for my serverless application."
+            },
+            "paths": {
+              "/new/films": {
+                "get": {
+                  "summary": "Get all custom new films",
+                  "description": "Retrieve a list of custom new films.",
+                  "responses": {
+                    "200": {
+                      "description": "Successful response"
+                    }
+                  }
+                },
+                "post": {
+                  "summary": "Create a custom new film",
+                  "description": "Create a custom new film.",
+                  "responses": {
+                    "201": {
+                      "description": "Film created successfully"
+                    }
+                  }
+                }
+              },
+              "/new/films/{id}": {
+                "get": {
+                  "summary": "Get a custom new film by its id",
+                  "description": "Retrieve a custom new film by its id.",
+                  "responses": {
+                    "200": {
+                      "description": "Successful response"
+                    }
+                  }
+                },
+                "put": {
+                  "summary": "Update a custom new film",
+                  "description": "Update a custom new film.",
+                  "responses": {
+                    "200": {
+                      "description": "Successful response"
+                    }
+                  }
+                },
+                "delete": {
+                  "summary": "Delete a custom new film",
+                  "description": "Delete a custom new film.",
+                  "responses": {
+                    "204": {
+                      "description": "Film deleted successfully"
+                    }
+                  }
+                }
+              },
+              "/old/films": {
+                "get": {
+                  "summary": "Get all films from original swapi",
+                  "description": "Get all films from original swapi.",
+                  "responses": {
+                    "200": {
+                      "description": "Successful response"
+                    }
+                  }
+                }
+              },
+              "/old/films/{id}": {
+                "get": {
+                  "summary": "Get a film from original swapi by its id",
+                  "description": "Get a film from original swapi by its id.",
+                  "responses": {
+                    "200": {
+                      "description": "Successful response"
+                    }
+                  }
+                }
+              },
+              "/old/people": {
+                "get": {
+                  "summary": "Get all people from original swapi",
+                  "description": "Get all people from original swapi.",
+                  "responses": {
+                    "200": {
+                      "description": "Successful response"
+                    }
+                  }
+                }
+              },
+              "/old/people/{id}": {
+                "get": {
+                  "summary": "Get people from original swapi by its id",
+                  "description": "Get people from original swapi by its id.",
+                  "responses": {
+                    "200": {
+                      "description": "Successful response"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "functions": {
         "GetNewFilmsFunction": {
           "name": "GetNewFilmsFunction",
@@ -1530,7 +1636,7 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "GetNewFilmsFunctionLambdaVersionkZVsaQQLqrZei5oyRTNNRkc6sjLtw1Phk15iYH8BTRQ"
+          "versionLogicalId": "GetNewFilmsFunctionLambdaVersionPhS6P45b0HV4z9ittNoFUqH1r7Dyp5iajOkah0j0"
         },
         "GetNewFilmByIdFunction": {
           "name": "GetNewFilmByIdFunction",
@@ -1550,7 +1656,7 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "GetNewFilmByIdFunctionLambdaVersionsPnE9FgbnR3EYUq0zYfhBxEQPCLdZxZccu5P3Zc"
+          "versionLogicalId": "GetNewFilmByIdFunctionLambdaVersionHtYkUudlby4xLMZSa2T6m22QG31TtvcAxwXJdjyuQ"
         },
         "CreateNewFilmFunction": {
           "name": "CreateNewFilmFunction",
@@ -1570,7 +1676,7 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "CreateNewFilmFunctionLambdaVersionQisd6ekzyFONwoRoW7s5MXVOBegdLoFVG45TXCtE7SA"
+          "versionLogicalId": "CreateNewFilmFunctionLambdaVersionA3jKUTtq7lUnq0OMg3LdWSKSGxaoYM5m7SqAT2L31o"
         },
         "UpdateNewFilmFunction": {
           "name": "UpdateNewFilmFunction",
@@ -1590,7 +1696,7 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "UpdateNewFilmFunctionLambdaVersionUFAYpgsx5AFXIZyftzAoCLSIeIRetIpmLucZiBI"
+          "versionLogicalId": "UpdateNewFilmFunctionLambdaVersion6IIuc2NnSL7b6rPkBPgnuoCoX4QrEq3hllaUiihHc"
         },
         "DeleteNewFilmFunction": {
           "name": "DeleteNewFilmFunction",
@@ -1610,7 +1716,7 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "DeleteNewFilmFunctionLambdaVersionUQ7jAedTdSWXT1CedV6OpDVDQqqx6aw7hC8VmlvI"
+          "versionLogicalId": "DeleteNewFilmFunctionLambdaVersionIkUARWISI918PBK7qZ4L65ChUHBNiRr2KD2cdvnu4"
         },
         "GetOldFilmsFunction": {
           "name": "GetOldFilmsFunction",
@@ -1630,7 +1736,7 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "GetOldFilmsFunctionLambdaVersion6iAwXxp2cFCtyN070VPK4qufBIq3CFjS8mNurYlGmj4"
+          "versionLogicalId": "GetOldFilmsFunctionLambdaVersionXobOsvrMhwmYe810ui3fA4thbx6OlLG74IiMGZWQ"
         },
         "GetOldFilmsByIdFunction": {
           "name": "GetOldFilmsByIdFunction",
@@ -1650,7 +1756,7 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "GetOldFilmsByIdFunctionLambdaVersion3SRc4twAIS42TfIiEgOlYbdZ1QFhiBdIsEwzlTKkvns"
+          "versionLogicalId": "GetOldFilmsByIdFunctionLambdaVersion6Qk9ekA6e9OvQKBFjvOp23woSM57lsrRHZAPKpGAIM"
         },
         "GetOldPeopleFunction": {
           "name": "GetOldPeopleFunction",
@@ -1670,7 +1776,7 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "GetOldPeopleFunctionLambdaVersionLGsQI4WPW11fKTQnigqog1Bzxxy8nGT5nWFUcKdYW7c"
+          "versionLogicalId": "GetOldPeopleFunctionLambdaVersionR53FxVh5vzqI1AkoozaWxThNR7P8u98xuNu9Fusbm8"
         },
         "GetOldPeopleByIdFunction": {
           "name": "GetOldPeopleByIdFunction",
@@ -1690,7 +1796,7 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "GetOldPeopleByIdFunctionLambdaVersionufB6l3ygMorWLAzF8bz20Aer5mQaE0As0uTKkbIeU"
+          "versionLogicalId": "GetOldPeopleByIdFunctionLambdaVersioni7KoJhk2BVN0zJKWuJYvOyI5ddfTE2OeFUauxKuYg"
         }
       },
       "resources": {
@@ -1759,7 +1865,7 @@
         "Outputs": {}
       }
     },
-    "serviceRawFile": "service: serverless-app\r\n\r\n# plugins:\r\n#   - serverless-offline\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs18.x\r\n  profile: alvaro\r\n  environment:\r\n    STAR_WARS_TABLE: StarWarsEntitiesTable\r\n    COUNTER_TABLE: CounterStarWarsEntitiesTable\r\n  iamRoleStatements:\r\n    - Effect: Allow\r\n      Action:\r\n        - dynamodb:*\r\n      Resource:\r\n        - !GetAtt StarWarsEntitiesTable.Arn\r\n        - !GetAtt CounterStarWarsEntitiesTable.Arn\r\n        - !Join \r\n            - \"\"\r\n            - - !GetAtt StarWarsEntitiesTable.Arn\r\n              - \"/index/EntidadIndex\" \r\n\r\nfunctions:\r\n  # NEW DATA:\r\n  GetNewFilmsFunction:\r\n    name: GetNewFilmsFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films\r\n          method: get\r\n  GetNewFilmByIdFunction:\r\n    name: GetNewFilmByIdFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films/{id}\r\n          method: get\r\n  CreateNewFilmFunction:\r\n    name: CreateNewFilmFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films\r\n          method: post\r\n  UpdateNewFilmFunction:\r\n    name: UpdateNewFilmFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films/{id}\r\n          method: put\r\n  DeleteNewFilmFunction:\r\n    name: DeleteNewFilmFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films/{id}\r\n          method: delete\r\n  \r\n  # OLD DATA:\r\n  GetOldFilmsFunction:\r\n    name: GetOldFilmsFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /old/films\r\n          method: get\r\n  GetOldFilmsByIdFunction:\r\n    name: GetOldFilmsByIdFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /old/films/{id}\r\n          method: get\r\n  \r\n  GetOldPeopleFunction:\r\n    name: GetOldPeopleFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /old/people\r\n          method: get\r\n  GetOldPeopleByIdFunction:\r\n    name: GetOldPeopleByIdFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /old/people/{id}\r\n          method: get\r\n\r\nresources:\r\n  Resources:\r\n    StarWarsEntitiesTable:\r\n      Type: AWS::DynamoDB::Table\r\n      Properties:\r\n        TableName: StarWarsEntitiesTable\r\n        BillingMode: PAY_PER_REQUEST\r\n        AttributeDefinitions:\r\n          - AttributeName: id\r\n            AttributeType: S\r\n          - AttributeName: entidad\r\n            AttributeType: S\r\n        KeySchema:\r\n          - AttributeName: id\r\n            KeyType: HASH\r\n          - AttributeName: entidad\r\n            KeyType: RANGE\r\n        GlobalSecondaryIndexes:\r\n          - IndexName: EntidadIndex\r\n            KeySchema:\r\n              - AttributeName: entidad\r\n                KeyType: HASH\r\n            Projection:\r\n              ProjectionType: ALL\r\n    CounterStarWarsEntitiesTable:\r\n      Type: AWS::DynamoDB::Table\r\n      Properties:\r\n        TableName: \"CounterStarWarsEntitiesTable\"\r\n        AttributeDefinitions:\r\n          - AttributeName: entidad\r\n            AttributeType: S\r\n        KeySchema:\r\n          - AttributeName: entidad\r\n            KeyType: HASH\r\n        BillingMode: PAY_PER_REQUEST",
+    "serviceRawFile": "service: serverless-app\r\n\r\n# plugins:\r\n#   - serverless-openapi-documentation\r\n#   - serverless-offline\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs18.x\r\n  profile: alvaro\r\n  environment:\r\n    STAR_WARS_TABLE: StarWarsEntitiesTable\r\n    COUNTER_TABLE: CounterStarWarsEntitiesTable\r\n  iamRoleStatements:\r\n    - Effect: Allow\r\n      Action:\r\n        - dynamodb:*\r\n      Resource:\r\n        - !GetAtt StarWarsEntitiesTable.Arn\r\n        - !GetAtt CounterStarWarsEntitiesTable.Arn\r\n        - !Join \r\n            - \"\"\r\n            - - !GetAtt StarWarsEntitiesTable.Arn\r\n              - \"/index/EntidadIndex\" \r\n\r\ncustom:\r\n  documentation:\r\n    api:\r\n      info:\r\n        title: My API\r\n        version: '1.0.0'\r\n        description: API documentation for my serverless application.\r\n      paths:\r\n        /new/films:\r\n          get:\r\n            summary: Get all custom new films\r\n            description: Retrieve a list of custom new films.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n          post:\r\n            summary: Create a custom new film\r\n            description: Create a custom new film.\r\n            responses:\r\n              '201':\r\n                description: Film created successfully\r\n        /new/films/{id}:\r\n          get:\r\n            summary: Get a custom new film by its id\r\n            description: Retrieve a custom new film by its id.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n          put:\r\n            summary: Update a custom new film\r\n            description: Update a custom new film.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n          delete:\r\n            summary: Delete a custom new film\r\n            description: Delete a custom new film.\r\n            responses:\r\n              '204':\r\n                description: Film deleted successfully\r\n        /old/films:\r\n          get:\r\n            summary: Get all films from original swapi\r\n            description: Get all films from original swapi.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n        /old/films/{id}:\r\n          get:\r\n            summary: Get a film from original swapi by its id\r\n            description: Get a film from original swapi by its id.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n        /old/people:\r\n          get:\r\n            summary: Get all people from original swapi\r\n            description: Get all people from original swapi.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n        /old/people/{id}:\r\n          get:\r\n            summary: Get people from original swapi by its id\r\n            description: Get people from original swapi by its id.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n\r\nfunctions:\r\n  # NEW DATA:\r\n  GetNewFilmsFunction:\r\n    name: GetNewFilmsFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films\r\n          method: get\r\n  GetNewFilmByIdFunction:\r\n    name: GetNewFilmByIdFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films/{id}\r\n          method: get\r\n  CreateNewFilmFunction:\r\n    name: CreateNewFilmFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films\r\n          method: post\r\n  UpdateNewFilmFunction:\r\n    name: UpdateNewFilmFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films/{id}\r\n          method: put\r\n  DeleteNewFilmFunction:\r\n    name: DeleteNewFilmFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films/{id}\r\n          method: delete\r\n  \r\n  # OLD DATA:\r\n  GetOldFilmsFunction:\r\n    name: GetOldFilmsFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /old/films\r\n          method: get\r\n  GetOldFilmsByIdFunction:\r\n    name: GetOldFilmsByIdFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /old/films/{id}\r\n          method: get\r\n  \r\n  GetOldPeopleFunction:\r\n    name: GetOldPeopleFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /old/people\r\n          method: get\r\n  GetOldPeopleByIdFunction:\r\n    name: GetOldPeopleByIdFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /old/people/{id}\r\n          method: get\r\n\r\nresources:\r\n  Resources:\r\n    StarWarsEntitiesTable:\r\n      Type: AWS::DynamoDB::Table\r\n      Properties:\r\n        TableName: StarWarsEntitiesTable\r\n        BillingMode: PAY_PER_REQUEST\r\n        AttributeDefinitions:\r\n          - AttributeName: id\r\n            AttributeType: S\r\n          - AttributeName: entidad\r\n            AttributeType: S\r\n        KeySchema:\r\n          - AttributeName: id\r\n            KeyType: HASH\r\n          - AttributeName: entidad\r\n            KeyType: RANGE\r\n        GlobalSecondaryIndexes:\r\n          - IndexName: EntidadIndex\r\n            KeySchema:\r\n              - AttributeName: entidad\r\n                KeyType: HASH\r\n            Projection:\r\n              ProjectionType: ALL\r\n    CounterStarWarsEntitiesTable:\r\n      Type: AWS::DynamoDB::Table\r\n      Properties:\r\n        TableName: \"CounterStarWarsEntitiesTable\"\r\n        AttributeDefinitions:\r\n          - AttributeName: entidad\r\n            AttributeType: S\r\n        KeySchema:\r\n          - AttributeName: entidad\r\n            KeyType: HASH\r\n        BillingMode: PAY_PER_REQUEST",
     "command": [
       "deploy"
     ],
@@ -1797,48 +1903,48 @@
     "serviceUniqueId": "arn:aws:cloudformation:us-east-1:953796120221:stack/serverless-app-dev/462354d0-9234-11ef-b864-0e78da857aef",
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:953796120221:stack/serverless-app-dev/462354d0-9234-11ef-b864-0e78da857aef",
     "serviceProviderAwsCfStackCreated": "2024-10-24T18:17:48.551Z",
-    "serviceProviderAwsCfStackUpdated": "2024-10-25T07:14:01.475Z",
+    "serviceProviderAwsCfStackUpdated": "2024-10-25T10:14:45.347Z",
     "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "GetOldFilmsByIdFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetOldFilmsByIdFunction:22",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetOldFilmsByIdFunction:26",
         "Description": "Current Lambda function version",
         "ExportName": "sls-serverless-app-dev-GetOldFilmsByIdFunctionLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "GetOldPeopleByIdFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetOldPeopleByIdFunction:22",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetOldPeopleByIdFunction:26",
         "Description": "Current Lambda function version",
         "ExportName": "sls-serverless-app-dev-GetOldPeopleByIdFunctionLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "DeleteNewFilmFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:DeleteNewFilmFunction:22",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:DeleteNewFilmFunction:26",
         "Description": "Current Lambda function version",
         "ExportName": "sls-serverless-app-dev-DeleteNewFilmFunctionLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "CreateNewFilmFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:CreateNewFilmFunction:22",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:CreateNewFilmFunction:26",
         "Description": "Current Lambda function version",
         "ExportName": "sls-serverless-app-dev-CreateNewFilmFunctionLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "GetOldPeopleFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetOldPeopleFunction:22",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetOldPeopleFunction:26",
         "Description": "Current Lambda function version",
         "ExportName": "sls-serverless-app-dev-GetOldPeopleFunctionLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "GetNewFilmsFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetNewFilmsFunction:22",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetNewFilmsFunction:26",
         "Description": "Current Lambda function version",
         "ExportName": "sls-serverless-app-dev-GetNewFilmsFunctionLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "GetNewFilmByIdFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetNewFilmByIdFunction:22",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetNewFilmByIdFunction:26",
         "Description": "Current Lambda function version",
         "ExportName": "sls-serverless-app-dev-GetNewFilmByIdFunctionLambdaFunctionQualifiedArn"
       },
@@ -1850,13 +1956,13 @@
       },
       {
         "OutputKey": "UpdateNewFilmFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:UpdateNewFilmFunction:22",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:UpdateNewFilmFunction:26",
         "Description": "Current Lambda function version",
         "ExportName": "sls-serverless-app-dev-UpdateNewFilmFunctionLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "GetOldFilmsFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetOldFilmsFunction:22",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetOldFilmsFunction:26",
         "Description": "Current Lambda function version",
         "ExportName": "sls-serverless-app-dev-GetOldFilmsFunctionLambdaFunctionQualifiedArn"
       },
