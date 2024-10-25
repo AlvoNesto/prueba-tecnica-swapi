@@ -2,10 +2,28 @@
   "AWSTemplateFormatVersion": "2010-09-09",
   "Description": "The AWS CloudFormation template for this Serverless application",
   "Resources": {
-    "HelloLogGroup": {
+    "GetFilmsOldSwapiFunctionLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/serverless-app-dev-hello"
+        "LogGroupName": "/aws/lambda/GetFilmsOldSwapiFunction"
+      }
+    },
+    "GetFilmsByIdOldSwapiFunctionLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/GetFilmsByIdOldSwapiFunction"
+      }
+    },
+    "GetPeopleOldSwapiFunctionLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/GetPeopleOldSwapiFunction"
+      }
+    },
+    "GetPeopleByIdOldSwapiFunctionLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/GetPeopleByIdOldSwapiFunction"
       }
     },
     "IamRoleLambdaExecution": {
@@ -51,7 +69,16 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/serverless-app-dev*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetFilmsOldSwapiFunction:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetFilmsByIdOldSwapiFunction:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetPeopleOldSwapiFunction:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetPeopleByIdOldSwapiFunction:*"
                     }
                   ]
                 },
@@ -62,7 +89,16 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/serverless-app-dev*:*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetFilmsOldSwapiFunction:*:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetFilmsByIdOldSwapiFunction:*:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetPeopleOldSwapiFunction:*:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetPeopleByIdOldSwapiFunction:*:*"
                     }
                   ]
                 }
@@ -86,16 +122,16 @@
         }
       }
     },
-    "HelloLambdaFunction": {
+    "GetFilmsOldSwapiFunctionLambdaFunction": {
       "Type": "AWS::Lambda::Function",
       "Properties": {
         "Code": {
           "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-          "S3Key": "serverless/serverless-app/dev/1729794086089-2024-10-24T18:21:26.089Z/serverless-app.zip"
+          "S3Key": "serverless/serverless-app/dev/1729816047659-2024-10-25T00:27:27.659Z/serverless-app.zip"
         },
         "Handler": "dist/main.handler",
         "Runtime": "nodejs18.x",
-        "FunctionName": "serverless-app-dev-hello",
+        "FunctionName": "GetFilmsOldSwapiFunction",
         "MemorySize": 1024,
         "Timeout": 6,
         "Role": {
@@ -106,110 +142,144 @@
         }
       },
       "DependsOn": [
-        "HelloLogGroup"
+        "GetFilmsOldSwapiFunctionLogGroup"
       ]
     },
-    "HelloLambdaVersionl9Z1bT1VnYIkFtCIuls6S3DTqGgaMXsptYgbgSlXQQ": {
+    "GetFilmsByIdOldSwapiFunctionLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
+          "S3Key": "serverless/serverless-app/dev/1729816047659-2024-10-25T00:27:27.659Z/serverless-app.zip"
+        },
+        "Handler": "dist/main.handler",
+        "Runtime": "nodejs18.x",
+        "FunctionName": "GetFilmsByIdOldSwapiFunction",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "GetFilmsByIdOldSwapiFunctionLogGroup"
+      ]
+    },
+    "GetPeopleOldSwapiFunctionLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
+          "S3Key": "serverless/serverless-app/dev/1729816047659-2024-10-25T00:27:27.659Z/serverless-app.zip"
+        },
+        "Handler": "dist/main.handler",
+        "Runtime": "nodejs18.x",
+        "FunctionName": "GetPeopleOldSwapiFunction",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "GetPeopleOldSwapiFunctionLogGroup"
+      ]
+    },
+    "GetPeopleByIdOldSwapiFunctionLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
+          "S3Key": "serverless/serverless-app/dev/1729816047659-2024-10-25T00:27:27.659Z/serverless-app.zip"
+        },
+        "Handler": "dist/main.handler",
+        "Runtime": "nodejs18.x",
+        "FunctionName": "GetPeopleByIdOldSwapiFunction",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "GetPeopleByIdOldSwapiFunctionLogGroup"
+      ]
+    },
+    "GetFilmsOldSwapiFunctionLambdaVersion4k9fKS9LjESJMPFJQE5l9yLg8KtyonPVCMWxJQK1gM": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
-          "Ref": "HelloLambdaFunction"
+          "Ref": "GetFilmsOldSwapiFunctionLambdaFunction"
         },
-        "CodeSha256": "uwncFWXkZXT5AlVCKXRP/L6PTBqo1K6ELQDJIM2jpVU="
+        "CodeSha256": "hRJkcn6sBlQDH8NQggdPLCCYEOfM8oTgD8AePyH4EB0="
       }
     },
-    "ApiGatewayRestApi": {
-      "Type": "AWS::ApiGateway::RestApi",
+    "GetFilmsByIdOldSwapiFunctionLambdaVersionGoZchgn1ZEsNvJQAcfACfX5UoReKZSvlgYA44t09E": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetFilmsByIdOldSwapiFunctionLambdaFunction"
+        },
+        "CodeSha256": "hRJkcn6sBlQDH8NQggdPLCCYEOfM8oTgD8AePyH4EB0="
+      }
+    },
+    "GetPeopleOldSwapiFunctionLambdaVersionh8rwM0mBzoJ1EumLQQG8KTrwyI9QLZaEf5gDsSTH6rI": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetPeopleOldSwapiFunctionLambdaFunction"
+        },
+        "CodeSha256": "hRJkcn6sBlQDH8NQggdPLCCYEOfM8oTgD8AePyH4EB0="
+      }
+    },
+    "GetPeopleByIdOldSwapiFunctionLambdaVersionEofdR1eJkzXEcoZGrUlnw0X4gYTKH8HhHci2aEzeQ": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetPeopleByIdOldSwapiFunctionLambdaFunction"
+        },
+        "CodeSha256": "hRJkcn6sBlQDH8NQggdPLCCYEOfM8oTgD8AePyH4EB0="
+      }
+    },
+    "HttpApi": {
+      "Type": "AWS::ApiGatewayV2::Api",
       "Properties": {
         "Name": "dev-serverless-app",
-        "EndpointConfiguration": {
-          "Types": [
-            "EDGE"
-          ]
-        },
-        "Policy": ""
+        "ProtocolType": "HTTP"
       }
     },
-    "ApiGatewayResourceHello": {
-      "Type": "AWS::ApiGateway::Resource",
+    "HttpApiStage": {
+      "Type": "AWS::ApiGatewayV2::Stage",
       "Properties": {
-        "ParentId": {
-          "Fn::GetAtt": [
-            "ApiGatewayRestApi",
-            "RootResourceId"
-          ]
+        "ApiId": {
+          "Ref": "HttpApi"
         },
-        "PathPart": "hello",
-        "RestApiId": {
-          "Ref": "ApiGatewayRestApi"
+        "StageName": "$default",
+        "AutoDeploy": true,
+        "DefaultRouteSettings": {
+          "DetailedMetricsEnabled": false
         }
       }
     },
-    "ApiGatewayMethodHelloGet": {
-      "Type": "AWS::ApiGateway::Method",
-      "Properties": {
-        "HttpMethod": "GET",
-        "RequestParameters": {},
-        "ResourceId": {
-          "Ref": "ApiGatewayResourceHello"
-        },
-        "RestApiId": {
-          "Ref": "ApiGatewayRestApi"
-        },
-        "ApiKeyRequired": false,
-        "AuthorizationType": "NONE",
-        "Integration": {
-          "IntegrationHttpMethod": "POST",
-          "Type": "AWS_PROXY",
-          "Uri": {
-            "Fn::Join": [
-              "",
-              [
-                "arn:",
-                {
-                  "Ref": "AWS::Partition"
-                },
-                ":apigateway:",
-                {
-                  "Ref": "AWS::Region"
-                },
-                ":lambda:path/2015-03-31/functions/",
-                {
-                  "Fn::GetAtt": [
-                    "HelloLambdaFunction",
-                    "Arn"
-                  ]
-                },
-                "/invocations"
-              ]
-            ]
-          }
-        },
-        "MethodResponses": []
-      },
-      "DependsOn": [
-        "HelloLambdaPermissionApiGateway"
-      ]
-    },
-    "ApiGatewayDeployment1729794067924": {
-      "Type": "AWS::ApiGateway::Deployment",
-      "Properties": {
-        "RestApiId": {
-          "Ref": "ApiGatewayRestApi"
-        },
-        "StageName": "dev"
-      },
-      "DependsOn": [
-        "ApiGatewayMethodHelloGet"
-      ]
-    },
-    "HelloLambdaPermissionApiGateway": {
+    "GetFilmsOldSwapiFunctionLambdaPermissionHttpApi": {
       "Type": "AWS::Lambda::Permission",
       "Properties": {
         "FunctionName": {
           "Fn::GetAtt": [
-            "HelloLambdaFunction",
+            "GetFilmsOldSwapiFunctionLambdaFunction",
             "Arn"
           ]
         },
@@ -233,13 +303,276 @@
               },
               ":",
               {
-                "Ref": "ApiGatewayRestApi"
+                "Ref": "HttpApi"
               },
-              "/*/*"
+              "/*"
             ]
           ]
         }
       }
+    },
+    "HttpApiIntegrationGetFilmsOldSwapiFunction": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "GetFilmsOldSwapiFunctionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0",
+        "TimeoutInMillis": 30000
+      }
+    },
+    "HttpApiRouteGetOldDashswapiFilms": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "GET /old-swapi/films",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationGetFilmsOldSwapiFunction"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationGetFilmsOldSwapiFunction"
+    },
+    "GetFilmsByIdOldSwapiFunctionLambdaPermissionHttpApi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetFilmsByIdOldSwapiFunctionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "HttpApi"
+              },
+              "/*"
+            ]
+          ]
+        }
+      }
+    },
+    "HttpApiIntegrationGetFilmsByIdOldSwapiFunction": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "GetFilmsByIdOldSwapiFunctionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0",
+        "TimeoutInMillis": 30000
+      }
+    },
+    "HttpApiRouteGetOldDashswapiFilmsIdVar": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "GET /old-swapi/films/{id}",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationGetFilmsByIdOldSwapiFunction"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationGetFilmsByIdOldSwapiFunction"
+    },
+    "GetPeopleOldSwapiFunctionLambdaPermissionHttpApi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetPeopleOldSwapiFunctionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "HttpApi"
+              },
+              "/*"
+            ]
+          ]
+        }
+      }
+    },
+    "HttpApiIntegrationGetPeopleOldSwapiFunction": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "GetPeopleOldSwapiFunctionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0",
+        "TimeoutInMillis": 30000
+      }
+    },
+    "HttpApiRouteGetOldDashswapiPeople": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "GET /old-swapi/people",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationGetPeopleOldSwapiFunction"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationGetPeopleOldSwapiFunction"
+    },
+    "GetPeopleByIdOldSwapiFunctionLambdaPermissionHttpApi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetPeopleByIdOldSwapiFunctionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "HttpApi"
+              },
+              "/*"
+            ]
+          ]
+        }
+      }
+    },
+    "HttpApiIntegrationGetPeopleByIdOldSwapiFunction": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "GetPeopleByIdOldSwapiFunctionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0",
+        "TimeoutInMillis": 30000
+      }
+    },
+    "HttpApiRouteGetOldDashswapiPeopleIdVar": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "GET /old-swapi/people/{id}",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationGetPeopleByIdOldSwapiFunction"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationGetPeopleByIdOldSwapiFunction"
     }
   },
   "Outputs": {
@@ -249,24 +582,60 @@
         "Name": "sls-serverless-app-dev-ServerlessDeploymentBucketName"
       }
     },
-    "HelloLambdaFunctionQualifiedArn": {
+    "GetFilmsOldSwapiFunctionLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "HelloLambdaVersionl9Z1bT1VnYIkFtCIuls6S3DTqGgaMXsptYgbgSlXQQ"
+        "Ref": "GetFilmsOldSwapiFunctionLambdaVersion4k9fKS9LjESJMPFJQE5l9yLg8KtyonPVCMWxJQK1gM"
       },
       "Export": {
-        "Name": "sls-serverless-app-dev-HelloLambdaFunctionQualifiedArn"
+        "Name": "sls-serverless-app-dev-GetFilmsOldSwapiFunctionLambdaFunctionQualifiedArn"
       }
     },
-    "ServiceEndpoint": {
-      "Description": "URL of the service endpoint",
+    "GetFilmsByIdOldSwapiFunctionLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetFilmsByIdOldSwapiFunctionLambdaVersionGoZchgn1ZEsNvJQAcfACfX5UoReKZSvlgYA44t09E"
+      },
+      "Export": {
+        "Name": "sls-serverless-app-dev-GetFilmsByIdOldSwapiFunctionLambdaFunctionQualifiedArn"
+      }
+    },
+    "GetPeopleOldSwapiFunctionLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetPeopleOldSwapiFunctionLambdaVersionh8rwM0mBzoJ1EumLQQG8KTrwyI9QLZaEf5gDsSTH6rI"
+      },
+      "Export": {
+        "Name": "sls-serverless-app-dev-GetPeopleOldSwapiFunctionLambdaFunctionQualifiedArn"
+      }
+    },
+    "GetPeopleByIdOldSwapiFunctionLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetPeopleByIdOldSwapiFunctionLambdaVersionEofdR1eJkzXEcoZGrUlnw0X4gYTKH8HhHci2aEzeQ"
+      },
+      "Export": {
+        "Name": "sls-serverless-app-dev-GetPeopleByIdOldSwapiFunctionLambdaFunctionQualifiedArn"
+      }
+    },
+    "HttpApiId": {
+      "Description": "Id of the HTTP API",
+      "Value": {
+        "Ref": "HttpApi"
+      },
+      "Export": {
+        "Name": "sls-serverless-app-dev-HttpApiId"
+      }
+    },
+    "HttpApiUrl": {
+      "Description": "URL of the HTTP API",
       "Value": {
         "Fn::Join": [
           "",
           [
             "https://",
             {
-              "Ref": "ApiGatewayRestApi"
+              "Ref": "HttpApi"
             },
             ".execute-api.",
             {
@@ -275,13 +644,12 @@
             ".",
             {
               "Ref": "AWS::URLSuffix"
-            },
-            "/dev"
+            }
           ]
         ]
       },
       "Export": {
-        "Name": "sls-serverless-app-dev-ServiceEndpoint"
+        "Name": "sls-serverless-app-dev-HttpApiUrl"
       }
     }
   }
