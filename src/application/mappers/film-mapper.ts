@@ -6,7 +6,7 @@ export class FilmMapper {
     return {
       titulo: film.title,
       episodio_id: film.episode_id,
-      text_apertura: film.opening_crawl,
+      texto_apertura: film.opening_crawl,
       director: film.director,
       productor: film.producer,
       personajes: film.characters,
