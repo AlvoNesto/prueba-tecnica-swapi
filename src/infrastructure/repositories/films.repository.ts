@@ -1,10 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { DynamoDB } from 'aws-sdk';
-import { IFilmsNewSwapiRepository } from '../../domain/repositories/films.new-swapi.repository.interface';
+import { IFilmsRepository } from '../../domain/repositories/films.repository.interface';
 import { Film } from '../../domain/entities/films.entity';
+import { URL } from '../database/swapi.config';
 
 @Injectable()
-export class FilmsNewSwapiRepository implements IFilmsNewSwapiRepository {
+export class FilmsRepository implements IFilmsRepository {
   private dynamoDb: DynamoDB.DocumentClient;
   private tableName: string = process.env.DYNAMODB_TABLE_FILMS;
 
@@ -12,13 +13,13 @@ export class FilmsNewSwapiRepository implements IFilmsNewSwapiRepository {
     this.dynamoDb = new DynamoDB.DocumentClient();
   }
 
-  async getAllFilms(): Promise<Film[]> {
+  async getAllDBFilms(): Promise<Film[]> {
     const params = { TableName: this.tableName };
     const result = await this.dynamoDb.scan(params).promise();
     return result.Items.map(item => new Film(item));
   }
 
-  async getFilmById(id: string): Promise<Film> {
+  async getDBFilmById(id: string): Promise<Film> {
     const params = {
       TableName: this.tableName,
       Key: { id },
@@ -27,7 +28,7 @@ export class FilmsNewSwapiRepository implements IFilmsNewSwapiRepository {
     return result.Item ? new Film(result.Item) : null;
   }
 
-  async createFilm(film: Film): Promise<Film> {
+  async createDBFilm(film: Film): Promise<Film> {
     const params = {
       TableName: this.tableName,
       Item: film,
@@ -36,7 +37,7 @@ export class FilmsNewSwapiRepository implements IFilmsNewSwapiRepository {
     return film;
   }
 
-  async updateFilm(id: string, film: Film): Promise<Film> {
+  async updateDBFilm(id: string, film: Film): Promise<Film> {
     const params = {
       TableName: this.tableName,
       Key: { id },
@@ -66,12 +67,24 @@ export class FilmsNewSwapiRepository implements IFilmsNewSwapiRepository {
     return new Film(result.Attributes);
   }
 
-  async deleteFilm(id: string): Promise<boolean> {
+  async deleteDBFilm(id: string): Promise<boolean> {
     const params = {
       TableName: this.tableName,
       Key: { id },
     };
     await this.dynamoDb.delete(params).promise();
     return true;
+  }
+
+  async getAllSwapiFilms(): Promise<Film[]> {
+    const response = await fetch(`${URL}/films`);
+    const data = await response.json();
+    return data.results.map(item => new Film(item));
+  }
+
+  async getSwapiFilmById(id: string): Promise<Film> {
+    const response = await fetch(`${URL}/films/${id}`);
+    const data = await response.json();
+    return new Film(data);
   }
 }

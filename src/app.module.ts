@@ -1,15 +1,13 @@
 import { Module } from '@nestjs/common';
-import { FilmsOldSwapiService } from './application/services/films.old-swapi.service';
-import { FilmsNewSwapiService } from './application/services/films.new-swapi.service';
-import { FilmsOldSwapiController } from './interfaces/controllers/films.old-swapi.controller';
-import { FilmsNewSwapiController } from './interfaces/controllers/films.new-swapi.controller';
-import { FilmsOldSwapiRepository } from './infrastructure/repositories/films.old-swapi.repository';
-import { FilmsNewSwapiRepository } from './infrastructure/repositories/films.new-swapi.repository';
+import { FilmsService } from './application/services/films.service';
+import { OldFilmsController } from './interfaces/controllers/old-films.controller';
+import { NewFilmsController } from './interfaces/controllers/new-films.controller';
+import { FilmsRepository } from './infrastructure/repositories/films.repository';
 
 
 @Module({
   imports: [],
-  controllers: [FilmsOldSwapiController, FilmsNewSwapiController],
-  providers: [FilmsOldSwapiService, FilmsNewSwapiService, FilmsOldSwapiRepository, FilmsNewSwapiRepository],
+  controllers: [OldFilmsController, NewFilmsController],
+  providers: [FilmsService, FilmsRepository],
 })
 export class AppModule {}
