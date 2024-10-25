@@ -135,6 +135,47 @@ functions:
           path: /new/films/{id}
           method: delete
   
+  GetNewPeopleFunction:
+    name: GetNewPeopleFunction
+    handler: dist/main.handler
+    timeout: 30
+    events:
+      - httpApi:
+          path: /new/people
+          method: get
+  GetNewPeopleByIdFunction:
+    name: GetNewPeopleByIdFunction
+    handler: dist/main.handler
+    timeout: 30
+    events:
+      - httpApi:
+          path: /new/people/{id}
+          method: get
+  CreateNewPeopleFunction:
+    name: CreateNewPeopleFunction
+    handler: dist/main.handler
+    timeout: 30
+    events:
+      - httpApi:
+          path: /new/people
+          method: post
+  UpdateNewPeopleFunction:
+    name: UpdateNewPeopleFunction
+    handler: dist/main.handler
+    timeout: 30
+    events:
+      - httpApi:
+          path: /new/people/{id}
+          method: put
+  DeleteNewPeopleFunction:
+    name: DeleteNewPeopleFunction
+    handler: dist/main.handler
+    timeout: 30
+    events:
+      - httpApi:
+          path: /new/people/{id}
+          method: delete
+  
   # OLD DATA:
   GetOldFilmsFunction:
     name: GetOldFilmsFunction
