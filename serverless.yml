@@ -1,18 +1,26 @@
 service: serverless-app
 
-plugins:
-  - serverless-offline
+# plugins:
+#   - serverless-offline
 
 provider:
   name: aws
   runtime: nodejs18.x
   profile: alvaro
+  environment:
+    STAR_WARS_TABLE: StarWarsEntitiesTable
+    COUNTER_TABLE: CounterStarWarsEntitiesTable
   iamRoleStatements:
     - Effect: Allow
       Action:
         - dynamodb:*
       Resource:
-        - !Ref StarWarsEntitiesTable.Arn
+        - !GetAtt StarWarsEntitiesTable.Arn
+        - !GetAtt CounterStarWarsEntitiesTable.Arn
+        - !Join 
+            - ""
+            - - !GetAtt StarWarsEntitiesTable.Arn
+              - "/index/EntidadIndex" 
 
 functions:
   # NEW DATA:
@@ -109,6 +117,13 @@ resources:
             KeyType: HASH
           - AttributeName: entidad
             KeyType: RANGE
+        GlobalSecondaryIndexes:
+          - IndexName: EntidadIndex
+            KeySchema:
+              - AttributeName: entidad
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
     CounterStarWarsEntitiesTable:
       Type: AWS::DynamoDB::Table
       Properties:

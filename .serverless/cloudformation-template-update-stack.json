@@ -2,28 +2,58 @@
   "AWSTemplateFormatVersion": "2010-09-09",
   "Description": "The AWS CloudFormation template for this Serverless application",
   "Resources": {
-    "GetFilmsOldSwapiFunctionLogGroup": {
+    "GetNewFilmsFunctionLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/GetFilmsOldSwapiFunction"
+        "LogGroupName": "/aws/lambda/GetNewFilmsFunction"
       }
     },
-    "GetFilmsByIdOldSwapiFunctionLogGroup": {
+    "GetNewFilmByIdFunctionLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/GetFilmsByIdOldSwapiFunction"
+        "LogGroupName": "/aws/lambda/GetNewFilmByIdFunction"
       }
     },
-    "GetPeopleOldSwapiFunctionLogGroup": {
+    "CreateNewFilmFunctionLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/GetPeopleOldSwapiFunction"
+        "LogGroupName": "/aws/lambda/CreateNewFilmFunction"
       }
     },
-    "GetPeopleByIdOldSwapiFunctionLogGroup": {
+    "UpdateNewFilmFunctionLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/GetPeopleByIdOldSwapiFunction"
+        "LogGroupName": "/aws/lambda/UpdateNewFilmFunction"
+      }
+    },
+    "DeleteNewFilmFunctionLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/DeleteNewFilmFunction"
+      }
+    },
+    "GetOldFilmsFunctionLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/GetOldFilmsFunction"
+      }
+    },
+    "GetOldFilmsByIdFunctionLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/GetOldFilmsByIdFunction"
+      }
+    },
+    "GetOldPeopleFunctionLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/GetOldPeopleFunction"
+      }
+    },
+    "GetOldPeopleByIdFunctionLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/GetOldPeopleByIdFunction"
       }
     },
     "IamRoleLambdaExecution": {
@@ -69,16 +99,31 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetFilmsOldSwapiFunction:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetNewFilmsFunction:*"
                     },
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetFilmsByIdOldSwapiFunction:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetNewFilmByIdFunction:*"
                     },
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetPeopleOldSwapiFunction:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/CreateNewFilmFunction:*"
                     },
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetPeopleByIdOldSwapiFunction:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/UpdateNewFilmFunction:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/DeleteNewFilmFunction:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetOldFilmsFunction:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetOldFilmsByIdFunction:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetOldPeopleFunction:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetOldPeopleByIdFunction:*"
                     }
                   ]
                 },
@@ -89,16 +134,65 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetFilmsOldSwapiFunction:*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetNewFilmsFunction:*:*"
                     },
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetFilmsByIdOldSwapiFunction:*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetNewFilmByIdFunction:*:*"
                     },
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetPeopleOldSwapiFunction:*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/CreateNewFilmFunction:*:*"
                     },
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetPeopleByIdOldSwapiFunction:*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/UpdateNewFilmFunction:*:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/DeleteNewFilmFunction:*:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetOldFilmsFunction:*:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetOldFilmsByIdFunction:*:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetOldPeopleFunction:*:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetOldPeopleByIdFunction:*:*"
+                    }
+                  ]
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "dynamodb:*"
+                  ],
+                  "Resource": [
+                    {
+                      "Fn::GetAtt": [
+                        "StarWarsEntitiesTable",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "CounterStarWarsEntitiesTable",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::Join": [
+                        "",
+                        [
+                          {
+                            "Fn::GetAtt": [
+                              "StarWarsEntitiesTable",
+                              "Arn"
+                            ]
+                          },
+                          "/index/EntidadIndex"
+                        ]
+                      ]
                     }
                   ]
                 }
@@ -122,18 +216,24 @@
         }
       }
     },
-    "GetFilmsOldSwapiFunctionLambdaFunction": {
+    "GetNewFilmsFunctionLambdaFunction": {
       "Type": "AWS::Lambda::Function",
       "Properties": {
         "Code": {
           "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-          "S3Key": "serverless/serverless-app/dev/1729816047659-2024-10-25T00:27:27.659Z/serverless-app.zip"
+          "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
         },
         "Handler": "dist/main.handler",
         "Runtime": "nodejs18.x",
-        "FunctionName": "GetFilmsOldSwapiFunction",
+        "FunctionName": "GetNewFilmsFunction",
         "MemorySize": 1024,
-        "Timeout": 6,
+        "Timeout": 30,
+        "Environment": {
+          "Variables": {
+            "STAR_WARS_TABLE": "StarWarsEntitiesTable",
+            "COUNTER_TABLE": "CounterStarWarsEntitiesTable"
+          }
+        },
         "Role": {
           "Fn::GetAtt": [
             "IamRoleLambdaExecution",
@@ -142,21 +242,27 @@
         }
       },
       "DependsOn": [
-        "GetFilmsOldSwapiFunctionLogGroup"
+        "GetNewFilmsFunctionLogGroup"
       ]
     },
-    "GetFilmsByIdOldSwapiFunctionLambdaFunction": {
+    "GetNewFilmByIdFunctionLambdaFunction": {
       "Type": "AWS::Lambda::Function",
       "Properties": {
         "Code": {
           "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-          "S3Key": "serverless/serverless-app/dev/1729816047659-2024-10-25T00:27:27.659Z/serverless-app.zip"
+          "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
         },
         "Handler": "dist/main.handler",
         "Runtime": "nodejs18.x",
-        "FunctionName": "GetFilmsByIdOldSwapiFunction",
+        "FunctionName": "GetNewFilmByIdFunction",
         "MemorySize": 1024,
-        "Timeout": 6,
+        "Timeout": 30,
+        "Environment": {
+          "Variables": {
+            "STAR_WARS_TABLE": "StarWarsEntitiesTable",
+            "COUNTER_TABLE": "CounterStarWarsEntitiesTable"
+          }
+        },
         "Role": {
           "Fn::GetAtt": [
             "IamRoleLambdaExecution",
@@ -165,21 +271,27 @@
         }
       },
       "DependsOn": [
-        "GetFilmsByIdOldSwapiFunctionLogGroup"
+        "GetNewFilmByIdFunctionLogGroup"
       ]
     },
-    "GetPeopleOldSwapiFunctionLambdaFunction": {
+    "CreateNewFilmFunctionLambdaFunction": {
       "Type": "AWS::Lambda::Function",
       "Properties": {
         "Code": {
           "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-          "S3Key": "serverless/serverless-app/dev/1729816047659-2024-10-25T00:27:27.659Z/serverless-app.zip"
+          "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
         },
         "Handler": "dist/main.handler",
         "Runtime": "nodejs18.x",
-        "FunctionName": "GetPeopleOldSwapiFunction",
+        "FunctionName": "CreateNewFilmFunction",
         "MemorySize": 1024,
-        "Timeout": 6,
+        "Timeout": 30,
+        "Environment": {
+          "Variables": {
+            "STAR_WARS_TABLE": "StarWarsEntitiesTable",
+            "COUNTER_TABLE": "CounterStarWarsEntitiesTable"
+          }
+        },
         "Role": {
           "Fn::GetAtt": [
             "IamRoleLambdaExecution",
@@ -188,21 +300,27 @@
         }
       },
       "DependsOn": [
-        "GetPeopleOldSwapiFunctionLogGroup"
+        "CreateNewFilmFunctionLogGroup"
       ]
     },
-    "GetPeopleByIdOldSwapiFunctionLambdaFunction": {
+    "UpdateNewFilmFunctionLambdaFunction": {
       "Type": "AWS::Lambda::Function",
       "Properties": {
         "Code": {
           "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-          "S3Key": "serverless/serverless-app/dev/1729816047659-2024-10-25T00:27:27.659Z/serverless-app.zip"
+          "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
         },
         "Handler": "dist/main.handler",
         "Runtime": "nodejs18.x",
-        "FunctionName": "GetPeopleByIdOldSwapiFunction",
+        "FunctionName": "UpdateNewFilmFunction",
         "MemorySize": 1024,
-        "Timeout": 6,
+        "Timeout": 30,
+        "Environment": {
+          "Variables": {
+            "STAR_WARS_TABLE": "StarWarsEntitiesTable",
+            "COUNTER_TABLE": "CounterStarWarsEntitiesTable"
+          }
+        },
         "Role": {
           "Fn::GetAtt": [
             "IamRoleLambdaExecution",
@@ -211,47 +329,242 @@
         }
       },
       "DependsOn": [
-        "GetPeopleByIdOldSwapiFunctionLogGroup"
+        "UpdateNewFilmFunctionLogGroup"
       ]
     },
-    "GetFilmsOldSwapiFunctionLambdaVersion4k9fKS9LjESJMPFJQE5l9yLg8KtyonPVCMWxJQK1gM": {
+    "DeleteNewFilmFunctionLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
+          "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
+        },
+        "Handler": "dist/main.handler",
+        "Runtime": "nodejs18.x",
+        "FunctionName": "DeleteNewFilmFunction",
+        "MemorySize": 1024,
+        "Timeout": 30,
+        "Environment": {
+          "Variables": {
+            "STAR_WARS_TABLE": "StarWarsEntitiesTable",
+            "COUNTER_TABLE": "CounterStarWarsEntitiesTable"
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "DeleteNewFilmFunctionLogGroup"
+      ]
+    },
+    "GetOldFilmsFunctionLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
+          "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
+        },
+        "Handler": "dist/main.handler",
+        "Runtime": "nodejs18.x",
+        "FunctionName": "GetOldFilmsFunction",
+        "MemorySize": 1024,
+        "Timeout": 30,
+        "Environment": {
+          "Variables": {
+            "STAR_WARS_TABLE": "StarWarsEntitiesTable",
+            "COUNTER_TABLE": "CounterStarWarsEntitiesTable"
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "GetOldFilmsFunctionLogGroup"
+      ]
+    },
+    "GetOldFilmsByIdFunctionLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
+          "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
+        },
+        "Handler": "dist/main.handler",
+        "Runtime": "nodejs18.x",
+        "FunctionName": "GetOldFilmsByIdFunction",
+        "MemorySize": 1024,
+        "Timeout": 30,
+        "Environment": {
+          "Variables": {
+            "STAR_WARS_TABLE": "StarWarsEntitiesTable",
+            "COUNTER_TABLE": "CounterStarWarsEntitiesTable"
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "GetOldFilmsByIdFunctionLogGroup"
+      ]
+    },
+    "GetOldPeopleFunctionLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
+          "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
+        },
+        "Handler": "dist/main.handler",
+        "Runtime": "nodejs18.x",
+        "FunctionName": "GetOldPeopleFunction",
+        "MemorySize": 1024,
+        "Timeout": 30,
+        "Environment": {
+          "Variables": {
+            "STAR_WARS_TABLE": "StarWarsEntitiesTable",
+            "COUNTER_TABLE": "CounterStarWarsEntitiesTable"
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "GetOldPeopleFunctionLogGroup"
+      ]
+    },
+    "GetOldPeopleByIdFunctionLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
+          "S3Key": "serverless/serverless-app/dev/1729840428558-2024-10-25T07:13:48.558Z/serverless-app.zip"
+        },
+        "Handler": "dist/main.handler",
+        "Runtime": "nodejs18.x",
+        "FunctionName": "GetOldPeopleByIdFunction",
+        "MemorySize": 1024,
+        "Timeout": 30,
+        "Environment": {
+          "Variables": {
+            "STAR_WARS_TABLE": "StarWarsEntitiesTable",
+            "COUNTER_TABLE": "CounterStarWarsEntitiesTable"
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "GetOldPeopleByIdFunctionLogGroup"
+      ]
+    },
+    "GetNewFilmsFunctionLambdaVersionkZVsaQQLqrZei5oyRTNNRkc6sjLtw1Phk15iYH8BTRQ": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
-          "Ref": "GetFilmsOldSwapiFunctionLambdaFunction"
+          "Ref": "GetNewFilmsFunctionLambdaFunction"
         },
-        "CodeSha256": "hRJkcn6sBlQDH8NQggdPLCCYEOfM8oTgD8AePyH4EB0="
+        "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
       }
     },
-    "GetFilmsByIdOldSwapiFunctionLambdaVersionGoZchgn1ZEsNvJQAcfACfX5UoReKZSvlgYA44t09E": {
+    "GetNewFilmByIdFunctionLambdaVersionsPnE9FgbnR3EYUq0zYfhBxEQPCLdZxZccu5P3Zc": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
-          "Ref": "GetFilmsByIdOldSwapiFunctionLambdaFunction"
+          "Ref": "GetNewFilmByIdFunctionLambdaFunction"
         },
-        "CodeSha256": "hRJkcn6sBlQDH8NQggdPLCCYEOfM8oTgD8AePyH4EB0="
+        "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
       }
     },
-    "GetPeopleOldSwapiFunctionLambdaVersionh8rwM0mBzoJ1EumLQQG8KTrwyI9QLZaEf5gDsSTH6rI": {
+    "CreateNewFilmFunctionLambdaVersionQisd6ekzyFONwoRoW7s5MXVOBegdLoFVG45TXCtE7SA": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
-          "Ref": "GetPeopleOldSwapiFunctionLambdaFunction"
+          "Ref": "CreateNewFilmFunctionLambdaFunction"
         },
-        "CodeSha256": "hRJkcn6sBlQDH8NQggdPLCCYEOfM8oTgD8AePyH4EB0="
+        "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
       }
     },
-    "GetPeopleByIdOldSwapiFunctionLambdaVersionEofdR1eJkzXEcoZGrUlnw0X4gYTKH8HhHci2aEzeQ": {
+    "UpdateNewFilmFunctionLambdaVersionUFAYpgsx5AFXIZyftzAoCLSIeIRetIpmLucZiBI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
-          "Ref": "GetPeopleByIdOldSwapiFunctionLambdaFunction"
+          "Ref": "UpdateNewFilmFunctionLambdaFunction"
         },
-        "CodeSha256": "hRJkcn6sBlQDH8NQggdPLCCYEOfM8oTgD8AePyH4EB0="
+        "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
+      }
+    },
+    "DeleteNewFilmFunctionLambdaVersionUQ7jAedTdSWXT1CedV6OpDVDQqqx6aw7hC8VmlvI": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "DeleteNewFilmFunctionLambdaFunction"
+        },
+        "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
+      }
+    },
+    "GetOldFilmsFunctionLambdaVersion6iAwXxp2cFCtyN070VPK4qufBIq3CFjS8mNurYlGmj4": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetOldFilmsFunctionLambdaFunction"
+        },
+        "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
+      }
+    },
+    "GetOldFilmsByIdFunctionLambdaVersion3SRc4twAIS42TfIiEgOlYbdZ1QFhiBdIsEwzlTKkvns": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetOldFilmsByIdFunctionLambdaFunction"
+        },
+        "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
+      }
+    },
+    "GetOldPeopleFunctionLambdaVersionLGsQI4WPW11fKTQnigqog1Bzxxy8nGT5nWFUcKdYW7c": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetOldPeopleFunctionLambdaFunction"
+        },
+        "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
+      }
+    },
+    "GetOldPeopleByIdFunctionLambdaVersionufB6l3ygMorWLAzF8bz20Aer5mQaE0As0uTKkbIeU": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetOldPeopleByIdFunctionLambdaFunction"
+        },
+        "CodeSha256": "UPZPNYrXh7Rj9zakiSS+vg4kDoA/EoUB3kK4sEI1x8w="
       }
     },
     "HttpApi": {
@@ -274,12 +587,12 @@
         }
       }
     },
-    "GetFilmsOldSwapiFunctionLambdaPermissionHttpApi": {
+    "GetNewFilmsFunctionLambdaPermissionHttpApi": {
       "Type": "AWS::Lambda::Permission",
       "Properties": {
         "FunctionName": {
           "Fn::GetAtt": [
-            "GetFilmsOldSwapiFunctionLambdaFunction",
+            "GetNewFilmsFunctionLambdaFunction",
             "Arn"
           ]
         },
@@ -311,7 +624,7 @@
         }
       }
     },
-    "HttpApiIntegrationGetFilmsOldSwapiFunction": {
+    "HttpApiIntegrationGetNewFilmsFunction": {
       "Type": "AWS::ApiGatewayV2::Integration",
       "Properties": {
         "ApiId": {
@@ -320,7 +633,7 @@
         "IntegrationType": "AWS_PROXY",
         "IntegrationUri": {
           "Fn::GetAtt": [
-            "GetFilmsOldSwapiFunctionLambdaFunction",
+            "GetNewFilmsFunctionLambdaFunction",
             "Arn"
           ]
         },
@@ -328,33 +641,33 @@
         "TimeoutInMillis": 30000
       }
     },
-    "HttpApiRouteGetOldDashswapiFilms": {
+    "HttpApiRouteGetNewFilms": {
       "Type": "AWS::ApiGatewayV2::Route",
       "Properties": {
         "ApiId": {
           "Ref": "HttpApi"
         },
-        "RouteKey": "GET /old-swapi/films",
+        "RouteKey": "GET /new/films",
         "Target": {
           "Fn::Join": [
             "/",
             [
               "integrations",
               {
-                "Ref": "HttpApiIntegrationGetFilmsOldSwapiFunction"
+                "Ref": "HttpApiIntegrationGetNewFilmsFunction"
               }
             ]
           ]
         }
       },
-      "DependsOn": "HttpApiIntegrationGetFilmsOldSwapiFunction"
+      "DependsOn": "HttpApiIntegrationGetNewFilmsFunction"
     },
-    "GetFilmsByIdOldSwapiFunctionLambdaPermissionHttpApi": {
+    "GetNewFilmByIdFunctionLambdaPermissionHttpApi": {
       "Type": "AWS::Lambda::Permission",
       "Properties": {
         "FunctionName": {
           "Fn::GetAtt": [
-            "GetFilmsByIdOldSwapiFunctionLambdaFunction",
+            "GetNewFilmByIdFunctionLambdaFunction",
             "Arn"
           ]
         },
@@ -386,7 +699,7 @@
         }
       }
     },
-    "HttpApiIntegrationGetFilmsByIdOldSwapiFunction": {
+    "HttpApiIntegrationGetNewFilmByIdFunction": {
       "Type": "AWS::ApiGatewayV2::Integration",
       "Properties": {
         "ApiId": {
@@ -395,7 +708,7 @@
         "IntegrationType": "AWS_PROXY",
         "IntegrationUri": {
           "Fn::GetAtt": [
-            "GetFilmsByIdOldSwapiFunctionLambdaFunction",
+            "GetNewFilmByIdFunctionLambdaFunction",
             "Arn"
           ]
         },
@@ -403,33 +716,33 @@
         "TimeoutInMillis": 30000
       }
     },
-    "HttpApiRouteGetOldDashswapiFilmsIdVar": {
+    "HttpApiRouteGetNewFilmsIdVar": {
       "Type": "AWS::ApiGatewayV2::Route",
       "Properties": {
         "ApiId": {
           "Ref": "HttpApi"
         },
-        "RouteKey": "GET /old-swapi/films/{id}",
+        "RouteKey": "GET /new/films/{id}",
         "Target": {
           "Fn::Join": [
             "/",
             [
               "integrations",
               {
-                "Ref": "HttpApiIntegrationGetFilmsByIdOldSwapiFunction"
+                "Ref": "HttpApiIntegrationGetNewFilmByIdFunction"
               }
             ]
           ]
         }
       },
-      "DependsOn": "HttpApiIntegrationGetFilmsByIdOldSwapiFunction"
+      "DependsOn": "HttpApiIntegrationGetNewFilmByIdFunction"
     },
-    "GetPeopleOldSwapiFunctionLambdaPermissionHttpApi": {
+    "CreateNewFilmFunctionLambdaPermissionHttpApi": {
       "Type": "AWS::Lambda::Permission",
       "Properties": {
         "FunctionName": {
           "Fn::GetAtt": [
-            "GetPeopleOldSwapiFunctionLambdaFunction",
+            "CreateNewFilmFunctionLambdaFunction",
             "Arn"
           ]
         },
@@ -461,7 +774,7 @@
         }
       }
     },
-    "HttpApiIntegrationGetPeopleOldSwapiFunction": {
+    "HttpApiIntegrationCreateNewFilmFunction": {
       "Type": "AWS::ApiGatewayV2::Integration",
       "Properties": {
         "ApiId": {
@@ -470,7 +783,7 @@
         "IntegrationType": "AWS_PROXY",
         "IntegrationUri": {
           "Fn::GetAtt": [
-            "GetPeopleOldSwapiFunctionLambdaFunction",
+            "CreateNewFilmFunctionLambdaFunction",
             "Arn"
           ]
         },
@@ -478,33 +791,33 @@
         "TimeoutInMillis": 30000
       }
     },
-    "HttpApiRouteGetOldDashswapiPeople": {
+    "HttpApiRoutePostNewFilms": {
       "Type": "AWS::ApiGatewayV2::Route",
       "Properties": {
         "ApiId": {
           "Ref": "HttpApi"
         },
-        "RouteKey": "GET /old-swapi/people",
+        "RouteKey": "POST /new/films",
         "Target": {
           "Fn::Join": [
             "/",
             [
               "integrations",
               {
-                "Ref": "HttpApiIntegrationGetPeopleOldSwapiFunction"
+                "Ref": "HttpApiIntegrationCreateNewFilmFunction"
               }
             ]
           ]
         }
       },
-      "DependsOn": "HttpApiIntegrationGetPeopleOldSwapiFunction"
+      "DependsOn": "HttpApiIntegrationCreateNewFilmFunction"
     },
-    "GetPeopleByIdOldSwapiFunctionLambdaPermissionHttpApi": {
+    "UpdateNewFilmFunctionLambdaPermissionHttpApi": {
       "Type": "AWS::Lambda::Permission",
       "Properties": {
         "FunctionName": {
           "Fn::GetAtt": [
-            "GetPeopleByIdOldSwapiFunctionLambdaFunction",
+            "UpdateNewFilmFunctionLambdaFunction",
             "Arn"
           ]
         },
@@ -536,7 +849,7 @@
         }
       }
     },
-    "HttpApiIntegrationGetPeopleByIdOldSwapiFunction": {
+    "HttpApiIntegrationUpdateNewFilmFunction": {
       "Type": "AWS::ApiGatewayV2::Integration",
       "Properties": {
         "ApiId": {
@@ -545,7 +858,7 @@
         "IntegrationType": "AWS_PROXY",
         "IntegrationUri": {
           "Fn::GetAtt": [
-            "GetPeopleByIdOldSwapiFunctionLambdaFunction",
+            "UpdateNewFilmFunctionLambdaFunction",
             "Arn"
           ]
         },
@@ -553,26 +866,461 @@
         "TimeoutInMillis": 30000
       }
     },
-    "HttpApiRouteGetOldDashswapiPeopleIdVar": {
+    "HttpApiRoutePutNewFilmsIdVar": {
       "Type": "AWS::ApiGatewayV2::Route",
       "Properties": {
         "ApiId": {
           "Ref": "HttpApi"
         },
-        "RouteKey": "GET /old-swapi/people/{id}",
+        "RouteKey": "PUT /new/films/{id}",
         "Target": {
           "Fn::Join": [
             "/",
             [
               "integrations",
               {
-                "Ref": "HttpApiIntegrationGetPeopleByIdOldSwapiFunction"
+                "Ref": "HttpApiIntegrationUpdateNewFilmFunction"
               }
             ]
           ]
         }
       },
-      "DependsOn": "HttpApiIntegrationGetPeopleByIdOldSwapiFunction"
+      "DependsOn": "HttpApiIntegrationUpdateNewFilmFunction"
+    },
+    "DeleteNewFilmFunctionLambdaPermissionHttpApi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "DeleteNewFilmFunctionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "HttpApi"
+              },
+              "/*"
+            ]
+          ]
+        }
+      }
+    },
+    "HttpApiIntegrationDeleteNewFilmFunction": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "DeleteNewFilmFunctionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0",
+        "TimeoutInMillis": 30000
+      }
+    },
+    "HttpApiRouteDeleteNewFilmsIdVar": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "DELETE /new/films/{id}",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationDeleteNewFilmFunction"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationDeleteNewFilmFunction"
+    },
+    "GetOldFilmsFunctionLambdaPermissionHttpApi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetOldFilmsFunctionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "HttpApi"
+              },
+              "/*"
+            ]
+          ]
+        }
+      }
+    },
+    "HttpApiIntegrationGetOldFilmsFunction": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "GetOldFilmsFunctionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0",
+        "TimeoutInMillis": 30000
+      }
+    },
+    "HttpApiRouteGetOldFilms": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "GET /old/films",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationGetOldFilmsFunction"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationGetOldFilmsFunction"
+    },
+    "GetOldFilmsByIdFunctionLambdaPermissionHttpApi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetOldFilmsByIdFunctionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "HttpApi"
+              },
+              "/*"
+            ]
+          ]
+        }
+      }
+    },
+    "HttpApiIntegrationGetOldFilmsByIdFunction": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "GetOldFilmsByIdFunctionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0",
+        "TimeoutInMillis": 30000
+      }
+    },
+    "HttpApiRouteGetOldFilmsIdVar": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "GET /old/films/{id}",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationGetOldFilmsByIdFunction"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationGetOldFilmsByIdFunction"
+    },
+    "GetOldPeopleFunctionLambdaPermissionHttpApi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetOldPeopleFunctionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "HttpApi"
+              },
+              "/*"
+            ]
+          ]
+        }
+      }
+    },
+    "HttpApiIntegrationGetOldPeopleFunction": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "GetOldPeopleFunctionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0",
+        "TimeoutInMillis": 30000
+      }
+    },
+    "HttpApiRouteGetOldPeople": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "GET /old/people",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationGetOldPeopleFunction"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationGetOldPeopleFunction"
+    },
+    "GetOldPeopleByIdFunctionLambdaPermissionHttpApi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetOldPeopleByIdFunctionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "HttpApi"
+              },
+              "/*"
+            ]
+          ]
+        }
+      }
+    },
+    "HttpApiIntegrationGetOldPeopleByIdFunction": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "GetOldPeopleByIdFunctionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0",
+        "TimeoutInMillis": 30000
+      }
+    },
+    "HttpApiRouteGetOldPeopleIdVar": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "GET /old/people/{id}",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationGetOldPeopleByIdFunction"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationGetOldPeopleByIdFunction"
+    },
+    "StarWarsEntitiesTable": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "StarWarsEntitiesTable",
+        "BillingMode": "PAY_PER_REQUEST",
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "id",
+            "AttributeType": "S"
+          },
+          {
+            "AttributeName": "entidad",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "id",
+            "KeyType": "HASH"
+          },
+          {
+            "AttributeName": "entidad",
+            "KeyType": "RANGE"
+          }
+        ],
+        "GlobalSecondaryIndexes": [
+          {
+            "IndexName": "EntidadIndex",
+            "KeySchema": [
+              {
+                "AttributeName": "entidad",
+                "KeyType": "HASH"
+              }
+            ],
+            "Projection": {
+              "ProjectionType": "ALL"
+            }
+          }
+        ]
+      }
+    },
+    "CounterStarWarsEntitiesTable": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "CounterStarWarsEntitiesTable",
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "entidad",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "entidad",
+            "KeyType": "HASH"
+          }
+        ],
+        "BillingMode": "PAY_PER_REQUEST"
+      }
     }
   },
   "Outputs": {
@@ -582,40 +1330,85 @@
         "Name": "sls-serverless-app-dev-ServerlessDeploymentBucketName"
       }
     },
-    "GetFilmsOldSwapiFunctionLambdaFunctionQualifiedArn": {
+    "GetNewFilmsFunctionLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetFilmsOldSwapiFunctionLambdaVersion4k9fKS9LjESJMPFJQE5l9yLg8KtyonPVCMWxJQK1gM"
+        "Ref": "GetNewFilmsFunctionLambdaVersionkZVsaQQLqrZei5oyRTNNRkc6sjLtw1Phk15iYH8BTRQ"
       },
       "Export": {
-        "Name": "sls-serverless-app-dev-GetFilmsOldSwapiFunctionLambdaFunctionQualifiedArn"
+        "Name": "sls-serverless-app-dev-GetNewFilmsFunctionLambdaFunctionQualifiedArn"
       }
     },
-    "GetFilmsByIdOldSwapiFunctionLambdaFunctionQualifiedArn": {
+    "GetNewFilmByIdFunctionLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetFilmsByIdOldSwapiFunctionLambdaVersionGoZchgn1ZEsNvJQAcfACfX5UoReKZSvlgYA44t09E"
+        "Ref": "GetNewFilmByIdFunctionLambdaVersionsPnE9FgbnR3EYUq0zYfhBxEQPCLdZxZccu5P3Zc"
       },
       "Export": {
-        "Name": "sls-serverless-app-dev-GetFilmsByIdOldSwapiFunctionLambdaFunctionQualifiedArn"
+        "Name": "sls-serverless-app-dev-GetNewFilmByIdFunctionLambdaFunctionQualifiedArn"
       }
     },
-    "GetPeopleOldSwapiFunctionLambdaFunctionQualifiedArn": {
+    "CreateNewFilmFunctionLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetPeopleOldSwapiFunctionLambdaVersionh8rwM0mBzoJ1EumLQQG8KTrwyI9QLZaEf5gDsSTH6rI"
+        "Ref": "CreateNewFilmFunctionLambdaVersionQisd6ekzyFONwoRoW7s5MXVOBegdLoFVG45TXCtE7SA"
       },
       "Export": {
-        "Name": "sls-serverless-app-dev-GetPeopleOldSwapiFunctionLambdaFunctionQualifiedArn"
+        "Name": "sls-serverless-app-dev-CreateNewFilmFunctionLambdaFunctionQualifiedArn"
       }
     },
-    "GetPeopleByIdOldSwapiFunctionLambdaFunctionQualifiedArn": {
+    "UpdateNewFilmFunctionLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetPeopleByIdOldSwapiFunctionLambdaVersionEofdR1eJkzXEcoZGrUlnw0X4gYTKH8HhHci2aEzeQ"
+        "Ref": "UpdateNewFilmFunctionLambdaVersionUFAYpgsx5AFXIZyftzAoCLSIeIRetIpmLucZiBI"
       },
       "Export": {
-        "Name": "sls-serverless-app-dev-GetPeopleByIdOldSwapiFunctionLambdaFunctionQualifiedArn"
+        "Name": "sls-serverless-app-dev-UpdateNewFilmFunctionLambdaFunctionQualifiedArn"
+      }
+    },
+    "DeleteNewFilmFunctionLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "DeleteNewFilmFunctionLambdaVersionUQ7jAedTdSWXT1CedV6OpDVDQqqx6aw7hC8VmlvI"
+      },
+      "Export": {
+        "Name": "sls-serverless-app-dev-DeleteNewFilmFunctionLambdaFunctionQualifiedArn"
+      }
+    },
+    "GetOldFilmsFunctionLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetOldFilmsFunctionLambdaVersion6iAwXxp2cFCtyN070VPK4qufBIq3CFjS8mNurYlGmj4"
+      },
+      "Export": {
+        "Name": "sls-serverless-app-dev-GetOldFilmsFunctionLambdaFunctionQualifiedArn"
+      }
+    },
+    "GetOldFilmsByIdFunctionLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetOldFilmsByIdFunctionLambdaVersion3SRc4twAIS42TfIiEgOlYbdZ1QFhiBdIsEwzlTKkvns"
+      },
+      "Export": {
+        "Name": "sls-serverless-app-dev-GetOldFilmsByIdFunctionLambdaFunctionQualifiedArn"
+      }
+    },
+    "GetOldPeopleFunctionLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetOldPeopleFunctionLambdaVersionLGsQI4WPW11fKTQnigqog1Bzxxy8nGT5nWFUcKdYW7c"
+      },
+      "Export": {
+        "Name": "sls-serverless-app-dev-GetOldPeopleFunctionLambdaFunctionQualifiedArn"
+      }
+    },
+    "GetOldPeopleByIdFunctionLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetOldPeopleByIdFunctionLambdaVersionufB6l3ygMorWLAzF8bz20Aer5mQaE0As0uTKkbIeU"
+      },
+      "Export": {
+        "Name": "sls-serverless-app-dev-GetOldPeopleByIdFunctionLambdaFunctionQualifiedArn"
       }
     },
     "HttpApiId": {
