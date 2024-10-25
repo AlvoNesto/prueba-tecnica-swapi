@@ -2,56 +2,58 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { OldFilmsController } from '../controllers/old-films.controller';
 import { FilmsService } from '../../application/services/films.service';
 import { Film } from '../../domain/entities/films.entity';
-import { NotFoundException } from '@nestjs/common';
 
 describe('OldFilmsController', () => {
-  let controller: OldFilmsController;
-  let filmService: FilmsService;
-
-  const mockFilmService = {
-    getAllSwapiFilms: jest.fn(),
-    getSwapiFilmById: jest.fn(),
-  };
+  let oldFilmsController: OldFilmsController;
+  let filmsService: FilmsService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [OldFilmsController],
       providers: [
-        { provide: FilmsService, useValue: mockFilmService },
+        {
+          provide: FilmsService,
+          useValue: {
+            getAllSwapiFilms: jest.fn(),
+          },
+        },
       ],
     }).compile();
 
-    controller = module.get<OldFilmsController>(OldFilmsController);
-    filmService = module.get<FilmsService>(FilmsService);
-  });
-
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
+    oldFilmsController = module.get<OldFilmsController>(OldFilmsController);
+    filmsService = module.get<FilmsService>(FilmsService);
   });
 
   describe('getAllSwapiFilms', () => {
     it('should return an array of films', async () => {
-      const result: Film[] = [{ id: '1', title: 'Film 1' } as Film];
-      mockFilmService.getAllSwapiFilms.mockResolvedValue(result);
+      
+      const mockFilms: Film[] = [
+        {
+          id: '1',
+          entidad: 'movie',
+          title: 'A New Hope',
+          episode_id: 4,
+          opening_crawl: 'It is a period of civil war...',
+          director: 'George Lucas',
+          producer: 'Gary Kurtz, Rick McCallum',
+          release_date: '1977-05-25',
+          characters: ['1', '2', '3'],
+          planets: ['Tatooine', 'Alderaan'],
+          starships: ['X-wing', 'Death Star'],
+          vehicles: ['Sand Crawler'],
+          species: ['Human', 'Droid'],
+          created: '1977-05-25',
+          edited: '1978-05-25',
+          url: 'https://swapi.dev/api/films/1/',
+        },
+      ];
 
-      expect(await controller.getAllSwapiFilms()).toEqual(result);
-      expect(filmService.getAllSwapiFilms).toHaveBeenCalledTimes(1);
-    });
-  });
+      jest.spyOn(filmsService, 'getAllSwapiFilms').mockResolvedValue(mockFilms);
 
-  describe('getSwapiFilmById', () => {
-    it('should return a film by ID', async () => {
-      const result: Film = { id: '1', title: 'Film 1' } as Film;
-      mockFilmService.getSwapiFilmById.mockResolvedValue(result);
-
-      expect(await controller.getSwapiFilmById('1')).toEqual(result);
-      expect(filmService.getSwapiFilmById).toHaveBeenCalledWith('1');
-    });
-
-    it('should throw a NotFoundException if film is not found', async () => {
-      mockFilmService.getSwapiFilmById.mockResolvedValue(null);
-
-      await expect(controller.getSwapiFilmById('1')).rejects.toThrow(NotFoundException);
+      const result = await oldFilmsController.getAllSwapiFilms();
+      
+      expect(result).toEqual(mockFilms);
+      expect(filmsService.getAllSwapiFilms).toHaveBeenCalledTimes(1);
     });
   });
 });

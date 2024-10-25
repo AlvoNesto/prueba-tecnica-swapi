@@ -1,8 +1,8 @@
 service: serverless-app
 
-# plugins:
-#   - serverless-openapi-documentation
-#   - serverless-offline
+plugins:
+  - serverless-openapi-documentation
+  - serverless-offline
 
 provider:
   name: aws
