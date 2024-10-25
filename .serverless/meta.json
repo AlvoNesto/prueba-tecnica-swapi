@@ -94,6 +94,36 @@
                 "LogGroupName": "/aws/lambda/DeleteNewFilmFunction"
               }
             },
+            "GetNewPeopleFunctionLogGroup": {
+              "Type": "AWS::Logs::LogGroup",
+              "Properties": {
+                "LogGroupName": "/aws/lambda/GetNewPeopleFunction"
+              }
+            },
+            "GetNewPeopleByIdFunctionLogGroup": {
+              "Type": "AWS::Logs::LogGroup",
+              "Properties": {
+                "LogGroupName": "/aws/lambda/GetNewPeopleByIdFunction"
+              }
+            },
+            "CreateNewPeopleFunctionLogGroup": {
+              "Type": "AWS::Logs::LogGroup",
+              "Properties": {
+                "LogGroupName": "/aws/lambda/CreateNewPeopleFunction"
+              }
+            },
+            "UpdateNewPeopleFunctionLogGroup": {
+              "Type": "AWS::Logs::LogGroup",
+              "Properties": {
+                "LogGroupName": "/aws/lambda/UpdateNewPeopleFunction"
+              }
+            },
+            "DeleteNewPeopleFunctionLogGroup": {
+              "Type": "AWS::Logs::LogGroup",
+              "Properties": {
+                "LogGroupName": "/aws/lambda/DeleteNewPeopleFunction"
+              }
+            },
             "GetOldFilmsFunctionLogGroup": {
               "Type": "AWS::Logs::LogGroup",
               "Properties": {
@@ -176,6 +206,21 @@
                               "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/DeleteNewFilmFunction:*"
                             },
                             {
+                              "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetNewPeopleFunction:*"
+                            },
+                            {
+                              "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetNewPeopleByIdFunction:*"
+                            },
+                            {
+                              "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/CreateNewPeopleFunction:*"
+                            },
+                            {
+                              "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/UpdateNewPeopleFunction:*"
+                            },
+                            {
+                              "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/DeleteNewPeopleFunction:*"
+                            },
+                            {
                               "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetOldFilmsFunction:*"
                             },
                             {
@@ -209,6 +254,21 @@
                             },
                             {
                               "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/DeleteNewFilmFunction:*:*"
+                            },
+                            {
+                              "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetNewPeopleFunction:*:*"
+                            },
+                            {
+                              "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetNewPeopleByIdFunction:*:*"
+                            },
+                            {
+                              "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/CreateNewPeopleFunction:*:*"
+                            },
+                            {
+                              "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/UpdateNewPeopleFunction:*:*"
+                            },
+                            {
+                              "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/DeleteNewPeopleFunction:*:*"
                             },
                             {
                               "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/GetOldFilmsFunction:*:*"
@@ -283,7 +343,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729852021189-2024-10-25T10:27:01.189Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -312,7 +372,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729852021189-2024-10-25T10:27:01.189Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -341,7 +401,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729852021189-2024-10-25T10:27:01.189Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -370,7 +430,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729852021189-2024-10-25T10:27:01.189Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -399,7 +459,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729852021189-2024-10-25T10:27:01.189Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -423,12 +483,157 @@
                 "DeleteNewFilmFunctionLogGroup"
               ]
             },
+            "GetNewPeopleFunctionLambdaFunction": {
+              "Type": "AWS::Lambda::Function",
+              "Properties": {
+                "Code": {
+                  "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
+                  "S3Key": "serverless/serverless-app/dev/1729852021189-2024-10-25T10:27:01.189Z/serverless-app.zip"
+                },
+                "Handler": "dist/main.handler",
+                "Runtime": "nodejs18.x",
+                "FunctionName": "GetNewPeopleFunction",
+                "MemorySize": 1024,
+                "Timeout": 30,
+                "Environment": {
+                  "Variables": {
+                    "STAR_WARS_TABLE": "StarWarsEntitiesTable",
+                    "COUNTER_TABLE": "CounterStarWarsEntitiesTable"
+                  }
+                },
+                "Role": {
+                  "Fn::GetAtt": [
+                    "IamRoleLambdaExecution",
+                    "Arn"
+                  ]
+                }
+              },
+              "DependsOn": [
+                "GetNewPeopleFunctionLogGroup"
+              ]
+            },
+            "GetNewPeopleByIdFunctionLambdaFunction": {
+              "Type": "AWS::Lambda::Function",
+              "Properties": {
+                "Code": {
+                  "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
+                  "S3Key": "serverless/serverless-app/dev/1729852021189-2024-10-25T10:27:01.189Z/serverless-app.zip"
+                },
+                "Handler": "dist/main.handler",
+                "Runtime": "nodejs18.x",
+                "FunctionName": "GetNewPeopleByIdFunction",
+                "MemorySize": 1024,
+                "Timeout": 30,
+                "Environment": {
+                  "Variables": {
+                    "STAR_WARS_TABLE": "StarWarsEntitiesTable",
+                    "COUNTER_TABLE": "CounterStarWarsEntitiesTable"
+                  }
+                },
+                "Role": {
+                  "Fn::GetAtt": [
+                    "IamRoleLambdaExecution",
+                    "Arn"
+                  ]
+                }
+              },
+              "DependsOn": [
+                "GetNewPeopleByIdFunctionLogGroup"
+              ]
+            },
+            "CreateNewPeopleFunctionLambdaFunction": {
+              "Type": "AWS::Lambda::Function",
+              "Properties": {
+                "Code": {
+                  "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
+                  "S3Key": "serverless/serverless-app/dev/1729852021189-2024-10-25T10:27:01.189Z/serverless-app.zip"
+                },
+                "Handler": "dist/main.handler",
+                "Runtime": "nodejs18.x",
+                "FunctionName": "CreateNewPeopleFunction",
+                "MemorySize": 1024,
+                "Timeout": 30,
+                "Environment": {
+                  "Variables": {
+                    "STAR_WARS_TABLE": "StarWarsEntitiesTable",
+                    "COUNTER_TABLE": "CounterStarWarsEntitiesTable"
+                  }
+                },
+                "Role": {
+                  "Fn::GetAtt": [
+                    "IamRoleLambdaExecution",
+                    "Arn"
+                  ]
+                }
+              },
+              "DependsOn": [
+                "CreateNewPeopleFunctionLogGroup"
+              ]
+            },
+            "UpdateNewPeopleFunctionLambdaFunction": {
+              "Type": "AWS::Lambda::Function",
+              "Properties": {
+                "Code": {
+                  "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
+                  "S3Key": "serverless/serverless-app/dev/1729852021189-2024-10-25T10:27:01.189Z/serverless-app.zip"
+                },
+                "Handler": "dist/main.handler",
+                "Runtime": "nodejs18.x",
+                "FunctionName": "UpdateNewPeopleFunction",
+                "MemorySize": 1024,
+                "Timeout": 30,
+                "Environment": {
+                  "Variables": {
+                    "STAR_WARS_TABLE": "StarWarsEntitiesTable",
+                    "COUNTER_TABLE": "CounterStarWarsEntitiesTable"
+                  }
+                },
+                "Role": {
+                  "Fn::GetAtt": [
+                    "IamRoleLambdaExecution",
+                    "Arn"
+                  ]
+                }
+              },
+              "DependsOn": [
+                "UpdateNewPeopleFunctionLogGroup"
+              ]
+            },
+            "DeleteNewPeopleFunctionLambdaFunction": {
+              "Type": "AWS::Lambda::Function",
+              "Properties": {
+                "Code": {
+                  "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
+                  "S3Key": "serverless/serverless-app/dev/1729852021189-2024-10-25T10:27:01.189Z/serverless-app.zip"
+                },
+                "Handler": "dist/main.handler",
+                "Runtime": "nodejs18.x",
+                "FunctionName": "DeleteNewPeopleFunction",
+                "MemorySize": 1024,
+                "Timeout": 30,
+                "Environment": {
+                  "Variables": {
+                    "STAR_WARS_TABLE": "StarWarsEntitiesTable",
+                    "COUNTER_TABLE": "CounterStarWarsEntitiesTable"
+                  }
+                },
+                "Role": {
+                  "Fn::GetAtt": [
+                    "IamRoleLambdaExecution",
+                    "Arn"
+                  ]
+                }
+              },
+              "DependsOn": [
+                "DeleteNewPeopleFunctionLogGroup"
+              ]
+            },
             "GetOldFilmsFunctionLambdaFunction": {
               "Type": "AWS::Lambda::Function",
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729852021189-2024-10-25T10:27:01.189Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -457,7 +662,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729852021189-2024-10-25T10:27:01.189Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -486,7 +691,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729852021189-2024-10-25T10:27:01.189Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -515,7 +720,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-472d37e3-fbe6",
-                  "S3Key": "serverless/serverless-app/dev/1729851271147-2024-10-25T10:14:31.147Z/serverless-app.zip"
+                  "S3Key": "serverless/serverless-app/dev/1729852021189-2024-10-25T10:27:01.189Z/serverless-app.zip"
                 },
                 "Handler": "dist/main.handler",
                 "Runtime": "nodejs18.x",
@@ -539,94 +744,144 @@
                 "GetOldPeopleByIdFunctionLogGroup"
               ]
             },
-            "GetNewFilmsFunctionLambdaVersionPhS6P45b0HV4z9ittNoFUqH1r7Dyp5iajOkah0j0": {
+            "GetNewFilmsFunctionLambdaVersion531OsGRTCmMeBypHhOnwZl2JSnMJiiIOQH0gDI5Lhk": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetNewFilmsFunctionLambdaFunction"
                 },
-                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
+                "CodeSha256": "MW9RgEZMgotn0hqGw7pD1Vz3R9UmUQLiLWSjghCUAKM="
               }
             },
-            "GetNewFilmByIdFunctionLambdaVersionHtYkUudlby4xLMZSa2T6m22QG31TtvcAxwXJdjyuQ": {
+            "GetNewFilmByIdFunctionLambdaVersion2y7Pm6G1663w86zUJlJWaOIVyH2JWf0ULjQGmMMM9vo": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetNewFilmByIdFunctionLambdaFunction"
                 },
-                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
+                "CodeSha256": "MW9RgEZMgotn0hqGw7pD1Vz3R9UmUQLiLWSjghCUAKM="
               }
             },
-            "CreateNewFilmFunctionLambdaVersionA3jKUTtq7lUnq0OMg3LdWSKSGxaoYM5m7SqAT2L31o": {
+            "CreateNewFilmFunctionLambdaVersionM40zTTDAdJ7NxgLcl6j2cLu40NdBaRUo5Cco": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "CreateNewFilmFunctionLambdaFunction"
                 },
-                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
+                "CodeSha256": "MW9RgEZMgotn0hqGw7pD1Vz3R9UmUQLiLWSjghCUAKM="
               }
             },
-            "UpdateNewFilmFunctionLambdaVersion6IIuc2NnSL7b6rPkBPgnuoCoX4QrEq3hllaUiihHc": {
+            "UpdateNewFilmFunctionLambdaVersionjqqeXsMVih1cHxqtTVsMknszbcsnBpbxJKVp8Mwio": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "UpdateNewFilmFunctionLambdaFunction"
                 },
-                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
+                "CodeSha256": "MW9RgEZMgotn0hqGw7pD1Vz3R9UmUQLiLWSjghCUAKM="
               }
             },
-            "DeleteNewFilmFunctionLambdaVersionIkUARWISI918PBK7qZ4L65ChUHBNiRr2KD2cdvnu4": {
+            "DeleteNewFilmFunctionLambdaVersionPVi1ohUNkzt4Xsl2rTt3HuCIVvPjGahQqIDc5DeH0": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "DeleteNewFilmFunctionLambdaFunction"
                 },
-                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
+                "CodeSha256": "MW9RgEZMgotn0hqGw7pD1Vz3R9UmUQLiLWSjghCUAKM="
               }
             },
-            "GetOldFilmsFunctionLambdaVersionXobOsvrMhwmYe810ui3fA4thbx6OlLG74IiMGZWQ": {
+            "GetNewPeopleFunctionLambdaVersionr0pai0LUPbBWAaRlRqPqMKQT0Mg8ZxtATdTvkCIttVs": {
+              "Type": "AWS::Lambda::Version",
+              "DeletionPolicy": "Retain",
+              "Properties": {
+                "FunctionName": {
+                  "Ref": "GetNewPeopleFunctionLambdaFunction"
+                },
+                "CodeSha256": "MW9RgEZMgotn0hqGw7pD1Vz3R9UmUQLiLWSjghCUAKM="
+              }
+            },
+            "GetNewPeopleByIdFunctionLambdaVersioncnJtcxc6XoIpGqhmwF1sAUXbtm4h9GuhgYtbyE": {
+              "Type": "AWS::Lambda::Version",
+              "DeletionPolicy": "Retain",
+              "Properties": {
+                "FunctionName": {
+                  "Ref": "GetNewPeopleByIdFunctionLambdaFunction"
+                },
+                "CodeSha256": "MW9RgEZMgotn0hqGw7pD1Vz3R9UmUQLiLWSjghCUAKM="
+              }
+            },
+            "CreateNewPeopleFunctionLambdaVersion03Jwbu21uuKIQ0DlKqWfZx2QqAWJEHaGGn5db1zGo": {
+              "Type": "AWS::Lambda::Version",
+              "DeletionPolicy": "Retain",
+              "Properties": {
+                "FunctionName": {
+                  "Ref": "CreateNewPeopleFunctionLambdaFunction"
+                },
+                "CodeSha256": "MW9RgEZMgotn0hqGw7pD1Vz3R9UmUQLiLWSjghCUAKM="
+              }
+            },
+            "UpdateNewPeopleFunctionLambdaVersionR53PaL36yTtrUHpGIOrQ6D4o2K5qlDWm2vRbTYKxU": {
+              "Type": "AWS::Lambda::Version",
+              "DeletionPolicy": "Retain",
+              "Properties": {
+                "FunctionName": {
+                  "Ref": "UpdateNewPeopleFunctionLambdaFunction"
+                },
+                "CodeSha256": "MW9RgEZMgotn0hqGw7pD1Vz3R9UmUQLiLWSjghCUAKM="
+              }
+            },
+            "DeleteNewPeopleFunctionLambdaVersionNVBmZy6r1PDcprgD0XfqC3xUqZngdt3oT2D31LPHPFA": {
+              "Type": "AWS::Lambda::Version",
+              "DeletionPolicy": "Retain",
+              "Properties": {
+                "FunctionName": {
+                  "Ref": "DeleteNewPeopleFunctionLambdaFunction"
+                },
+                "CodeSha256": "MW9RgEZMgotn0hqGw7pD1Vz3R9UmUQLiLWSjghCUAKM="
+              }
+            },
+            "GetOldFilmsFunctionLambdaVersioneCkcmaM4utHC7NehL6QIElCxmTNnQ5idFdx0dgQAY": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetOldFilmsFunctionLambdaFunction"
                 },
-                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
+                "CodeSha256": "MW9RgEZMgotn0hqGw7pD1Vz3R9UmUQLiLWSjghCUAKM="
               }
             },
-            "GetOldFilmsByIdFunctionLambdaVersion6Qk9ekA6e9OvQKBFjvOp23woSM57lsrRHZAPKpGAIM": {
+            "GetOldFilmsByIdFunctionLambdaVersionEZnixxFOr4VArNhfc66ozOXNSsi8Q4pbd7Q6LjWuxg0": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetOldFilmsByIdFunctionLambdaFunction"
                 },
-                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
+                "CodeSha256": "MW9RgEZMgotn0hqGw7pD1Vz3R9UmUQLiLWSjghCUAKM="
               }
             },
-            "GetOldPeopleFunctionLambdaVersionR53FxVh5vzqI1AkoozaWxThNR7P8u98xuNu9Fusbm8": {
+            "GetOldPeopleFunctionLambdaVersionKF4UJihV2jkgWmxEGpr4fuBsZRztbCYuDoOnf0ojk": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetOldPeopleFunctionLambdaFunction"
                 },
-                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
+                "CodeSha256": "MW9RgEZMgotn0hqGw7pD1Vz3R9UmUQLiLWSjghCUAKM="
               }
             },
-            "GetOldPeopleByIdFunctionLambdaVersioni7KoJhk2BVN0zJKWuJYvOyI5ddfTE2OeFUauxKuYg": {
+            "GetOldPeopleByIdFunctionLambdaVersionoEtKTRa2Og11IRvOOdoG3aW3eAsLBZVpjVr2Qvd8U": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetOldPeopleByIdFunctionLambdaFunction"
                 },
-                "CodeSha256": "ntxyrtZLqSZsHR+tGmwihZWkHwA0be5anH8WlFJSuo4="
+                "CodeSha256": "MW9RgEZMgotn0hqGw7pD1Vz3R9UmUQLiLWSjghCUAKM="
               }
             },
             "HttpApi": {
@@ -1024,6 +1279,381 @@
               },
               "DependsOn": "HttpApiIntegrationDeleteNewFilmFunction"
             },
+            "GetNewPeopleFunctionLambdaPermissionHttpApi": {
+              "Type": "AWS::Lambda::Permission",
+              "Properties": {
+                "FunctionName": {
+                  "Fn::GetAtt": [
+                    "GetNewPeopleFunctionLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "Action": "lambda:InvokeFunction",
+                "Principal": "apigateway.amazonaws.com",
+                "SourceArn": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":execute-api:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":",
+                      {
+                        "Ref": "HttpApi"
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              }
+            },
+            "HttpApiIntegrationGetNewPeopleFunction": {
+              "Type": "AWS::ApiGatewayV2::Integration",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "IntegrationType": "AWS_PROXY",
+                "IntegrationUri": {
+                  "Fn::GetAtt": [
+                    "GetNewPeopleFunctionLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "PayloadFormatVersion": "2.0",
+                "TimeoutInMillis": 30000
+              }
+            },
+            "HttpApiRouteGetNewPeople": {
+              "Type": "AWS::ApiGatewayV2::Route",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "RouteKey": "GET /new/people",
+                "Target": {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      "integrations",
+                      {
+                        "Ref": "HttpApiIntegrationGetNewPeopleFunction"
+                      }
+                    ]
+                  ]
+                }
+              },
+              "DependsOn": "HttpApiIntegrationGetNewPeopleFunction"
+            },
+            "GetNewPeopleByIdFunctionLambdaPermissionHttpApi": {
+              "Type": "AWS::Lambda::Permission",
+              "Properties": {
+                "FunctionName": {
+                  "Fn::GetAtt": [
+                    "GetNewPeopleByIdFunctionLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "Action": "lambda:InvokeFunction",
+                "Principal": "apigateway.amazonaws.com",
+                "SourceArn": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":execute-api:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":",
+                      {
+                        "Ref": "HttpApi"
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              }
+            },
+            "HttpApiIntegrationGetNewPeopleByIdFunction": {
+              "Type": "AWS::ApiGatewayV2::Integration",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "IntegrationType": "AWS_PROXY",
+                "IntegrationUri": {
+                  "Fn::GetAtt": [
+                    "GetNewPeopleByIdFunctionLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "PayloadFormatVersion": "2.0",
+                "TimeoutInMillis": 30000
+              }
+            },
+            "HttpApiRouteGetNewPeopleIdVar": {
+              "Type": "AWS::ApiGatewayV2::Route",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "RouteKey": "GET /new/people/{id}",
+                "Target": {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      "integrations",
+                      {
+                        "Ref": "HttpApiIntegrationGetNewPeopleByIdFunction"
+                      }
+                    ]
+                  ]
+                }
+              },
+              "DependsOn": "HttpApiIntegrationGetNewPeopleByIdFunction"
+            },
+            "CreateNewPeopleFunctionLambdaPermissionHttpApi": {
+              "Type": "AWS::Lambda::Permission",
+              "Properties": {
+                "FunctionName": {
+                  "Fn::GetAtt": [
+                    "CreateNewPeopleFunctionLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "Action": "lambda:InvokeFunction",
+                "Principal": "apigateway.amazonaws.com",
+                "SourceArn": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":execute-api:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":",
+                      {
+                        "Ref": "HttpApi"
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              }
+            },
+            "HttpApiIntegrationCreateNewPeopleFunction": {
+              "Type": "AWS::ApiGatewayV2::Integration",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "IntegrationType": "AWS_PROXY",
+                "IntegrationUri": {
+                  "Fn::GetAtt": [
+                    "CreateNewPeopleFunctionLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "PayloadFormatVersion": "2.0",
+                "TimeoutInMillis": 30000
+              }
+            },
+            "HttpApiRoutePostNewPeople": {
+              "Type": "AWS::ApiGatewayV2::Route",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "RouteKey": "POST /new/people",
+                "Target": {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      "integrations",
+                      {
+                        "Ref": "HttpApiIntegrationCreateNewPeopleFunction"
+                      }
+                    ]
+                  ]
+                }
+              },
+              "DependsOn": "HttpApiIntegrationCreateNewPeopleFunction"
+            },
+            "UpdateNewPeopleFunctionLambdaPermissionHttpApi": {
+              "Type": "AWS::Lambda::Permission",
+              "Properties": {
+                "FunctionName": {
+                  "Fn::GetAtt": [
+                    "UpdateNewPeopleFunctionLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "Action": "lambda:InvokeFunction",
+                "Principal": "apigateway.amazonaws.com",
+                "SourceArn": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":execute-api:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":",
+                      {
+                        "Ref": "HttpApi"
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              }
+            },
+            "HttpApiIntegrationUpdateNewPeopleFunction": {
+              "Type": "AWS::ApiGatewayV2::Integration",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "IntegrationType": "AWS_PROXY",
+                "IntegrationUri": {
+                  "Fn::GetAtt": [
+                    "UpdateNewPeopleFunctionLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "PayloadFormatVersion": "2.0",
+                "TimeoutInMillis": 30000
+              }
+            },
+            "HttpApiRoutePutNewPeopleIdVar": {
+              "Type": "AWS::ApiGatewayV2::Route",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "RouteKey": "PUT /new/people/{id}",
+                "Target": {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      "integrations",
+                      {
+                        "Ref": "HttpApiIntegrationUpdateNewPeopleFunction"
+                      }
+                    ]
+                  ]
+                }
+              },
+              "DependsOn": "HttpApiIntegrationUpdateNewPeopleFunction"
+            },
+            "DeleteNewPeopleFunctionLambdaPermissionHttpApi": {
+              "Type": "AWS::Lambda::Permission",
+              "Properties": {
+                "FunctionName": {
+                  "Fn::GetAtt": [
+                    "DeleteNewPeopleFunctionLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "Action": "lambda:InvokeFunction",
+                "Principal": "apigateway.amazonaws.com",
+                "SourceArn": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":execute-api:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":",
+                      {
+                        "Ref": "HttpApi"
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              }
+            },
+            "HttpApiIntegrationDeleteNewPeopleFunction": {
+              "Type": "AWS::ApiGatewayV2::Integration",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "IntegrationType": "AWS_PROXY",
+                "IntegrationUri": {
+                  "Fn::GetAtt": [
+                    "DeleteNewPeopleFunctionLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "PayloadFormatVersion": "2.0",
+                "TimeoutInMillis": 30000
+              }
+            },
+            "HttpApiRouteDeleteNewPeopleIdVar": {
+              "Type": "AWS::ApiGatewayV2::Route",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "RouteKey": "DELETE /new/people/{id}",
+                "Target": {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      "integrations",
+                      {
+                        "Ref": "HttpApiIntegrationDeleteNewPeopleFunction"
+                      }
+                    ]
+                  ]
+                }
+              },
+              "DependsOn": "HttpApiIntegrationDeleteNewPeopleFunction"
+            },
             "GetOldFilmsFunctionLambdaPermissionHttpApi": {
               "Type": "AWS::Lambda::Permission",
               "Properties": {
@@ -1395,7 +2025,7 @@
             "GetNewFilmsFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetNewFilmsFunctionLambdaVersionPhS6P45b0HV4z9ittNoFUqH1r7Dyp5iajOkah0j0"
+                "Ref": "GetNewFilmsFunctionLambdaVersion531OsGRTCmMeBypHhOnwZl2JSnMJiiIOQH0gDI5Lhk"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-GetNewFilmsFunctionLambdaFunctionQualifiedArn"
@@ -1404,7 +2034,7 @@
             "GetNewFilmByIdFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetNewFilmByIdFunctionLambdaVersionHtYkUudlby4xLMZSa2T6m22QG31TtvcAxwXJdjyuQ"
+                "Ref": "GetNewFilmByIdFunctionLambdaVersion2y7Pm6G1663w86zUJlJWaOIVyH2JWf0ULjQGmMMM9vo"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-GetNewFilmByIdFunctionLambdaFunctionQualifiedArn"
@@ -1413,7 +2043,7 @@
             "CreateNewFilmFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "CreateNewFilmFunctionLambdaVersionA3jKUTtq7lUnq0OMg3LdWSKSGxaoYM5m7SqAT2L31o"
+                "Ref": "CreateNewFilmFunctionLambdaVersionM40zTTDAdJ7NxgLcl6j2cLu40NdBaRUo5Cco"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-CreateNewFilmFunctionLambdaFunctionQualifiedArn"
@@ -1422,7 +2052,7 @@
             "UpdateNewFilmFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "UpdateNewFilmFunctionLambdaVersion6IIuc2NnSL7b6rPkBPgnuoCoX4QrEq3hllaUiihHc"
+                "Ref": "UpdateNewFilmFunctionLambdaVersionjqqeXsMVih1cHxqtTVsMknszbcsnBpbxJKVp8Mwio"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-UpdateNewFilmFunctionLambdaFunctionQualifiedArn"
@@ -1431,16 +2061,61 @@
             "DeleteNewFilmFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "DeleteNewFilmFunctionLambdaVersionIkUARWISI918PBK7qZ4L65ChUHBNiRr2KD2cdvnu4"
+                "Ref": "DeleteNewFilmFunctionLambdaVersionPVi1ohUNkzt4Xsl2rTt3HuCIVvPjGahQqIDc5DeH0"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-DeleteNewFilmFunctionLambdaFunctionQualifiedArn"
               }
             },
+            "GetNewPeopleFunctionLambdaFunctionQualifiedArn": {
+              "Description": "Current Lambda function version",
+              "Value": {
+                "Ref": "GetNewPeopleFunctionLambdaVersionr0pai0LUPbBWAaRlRqPqMKQT0Mg8ZxtATdTvkCIttVs"
+              },
+              "Export": {
+                "Name": "sls-serverless-app-dev-GetNewPeopleFunctionLambdaFunctionQualifiedArn"
+              }
+            },
+            "GetNewPeopleByIdFunctionLambdaFunctionQualifiedArn": {
+              "Description": "Current Lambda function version",
+              "Value": {
+                "Ref": "GetNewPeopleByIdFunctionLambdaVersioncnJtcxc6XoIpGqhmwF1sAUXbtm4h9GuhgYtbyE"
+              },
+              "Export": {
+                "Name": "sls-serverless-app-dev-GetNewPeopleByIdFunctionLambdaFunctionQualifiedArn"
+              }
+            },
+            "CreateNewPeopleFunctionLambdaFunctionQualifiedArn": {
+              "Description": "Current Lambda function version",
+              "Value": {
+                "Ref": "CreateNewPeopleFunctionLambdaVersion03Jwbu21uuKIQ0DlKqWfZx2QqAWJEHaGGn5db1zGo"
+              },
+              "Export": {
+                "Name": "sls-serverless-app-dev-CreateNewPeopleFunctionLambdaFunctionQualifiedArn"
+              }
+            },
+            "UpdateNewPeopleFunctionLambdaFunctionQualifiedArn": {
+              "Description": "Current Lambda function version",
+              "Value": {
+                "Ref": "UpdateNewPeopleFunctionLambdaVersionR53PaL36yTtrUHpGIOrQ6D4o2K5qlDWm2vRbTYKxU"
+              },
+              "Export": {
+                "Name": "sls-serverless-app-dev-UpdateNewPeopleFunctionLambdaFunctionQualifiedArn"
+              }
+            },
+            "DeleteNewPeopleFunctionLambdaFunctionQualifiedArn": {
+              "Description": "Current Lambda function version",
+              "Value": {
+                "Ref": "DeleteNewPeopleFunctionLambdaVersionNVBmZy6r1PDcprgD0XfqC3xUqZngdt3oT2D31LPHPFA"
+              },
+              "Export": {
+                "Name": "sls-serverless-app-dev-DeleteNewPeopleFunctionLambdaFunctionQualifiedArn"
+              }
+            },
             "GetOldFilmsFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetOldFilmsFunctionLambdaVersionXobOsvrMhwmYe810ui3fA4thbx6OlLG74IiMGZWQ"
+                "Ref": "GetOldFilmsFunctionLambdaVersioneCkcmaM4utHC7NehL6QIElCxmTNnQ5idFdx0dgQAY"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-GetOldFilmsFunctionLambdaFunctionQualifiedArn"
@@ -1449,7 +2124,7 @@
             "GetOldFilmsByIdFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetOldFilmsByIdFunctionLambdaVersion6Qk9ekA6e9OvQKBFjvOp23woSM57lsrRHZAPKpGAIM"
+                "Ref": "GetOldFilmsByIdFunctionLambdaVersionEZnixxFOr4VArNhfc66ozOXNSsi8Q4pbd7Q6LjWuxg0"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-GetOldFilmsByIdFunctionLambdaFunctionQualifiedArn"
@@ -1458,7 +2133,7 @@
             "GetOldPeopleFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetOldPeopleFunctionLambdaVersionR53FxVh5vzqI1AkoozaWxThNR7P8u98xuNu9Fusbm8"
+                "Ref": "GetOldPeopleFunctionLambdaVersionKF4UJihV2jkgWmxEGpr4fuBsZRztbCYuDoOnf0ojk"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-GetOldPeopleFunctionLambdaFunctionQualifiedArn"
@@ -1467,7 +2142,7 @@
             "GetOldPeopleByIdFunctionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetOldPeopleByIdFunctionLambdaVersioni7KoJhk2BVN0zJKWuJYvOyI5ddfTE2OeFUauxKuYg"
+                "Ref": "GetOldPeopleByIdFunctionLambdaVersionoEtKTRa2Og11IRvOOdoG3aW3eAsLBZVpjVr2Qvd8U"
               },
               "Export": {
                 "Name": "sls-serverless-app-dev-GetOldPeopleByIdFunctionLambdaFunctionQualifiedArn"
@@ -1636,7 +2311,7 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "GetNewFilmsFunctionLambdaVersionPhS6P45b0HV4z9ittNoFUqH1r7Dyp5iajOkah0j0"
+          "versionLogicalId": "GetNewFilmsFunctionLambdaVersion531OsGRTCmMeBypHhOnwZl2JSnMJiiIOQH0gDI5Lhk"
         },
         "GetNewFilmByIdFunction": {
           "name": "GetNewFilmByIdFunction",
@@ -1656,7 +2331,7 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "GetNewFilmByIdFunctionLambdaVersionHtYkUudlby4xLMZSa2T6m22QG31TtvcAxwXJdjyuQ"
+          "versionLogicalId": "GetNewFilmByIdFunctionLambdaVersion2y7Pm6G1663w86zUJlJWaOIVyH2JWf0ULjQGmMMM9vo"
         },
         "CreateNewFilmFunction": {
           "name": "CreateNewFilmFunction",
@@ -1676,7 +2351,7 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "CreateNewFilmFunctionLambdaVersionA3jKUTtq7lUnq0OMg3LdWSKSGxaoYM5m7SqAT2L31o"
+          "versionLogicalId": "CreateNewFilmFunctionLambdaVersionM40zTTDAdJ7NxgLcl6j2cLu40NdBaRUo5Cco"
         },
         "UpdateNewFilmFunction": {
           "name": "UpdateNewFilmFunction",
@@ -1696,7 +2371,7 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "UpdateNewFilmFunctionLambdaVersion6IIuc2NnSL7b6rPkBPgnuoCoX4QrEq3hllaUiihHc"
+          "versionLogicalId": "UpdateNewFilmFunctionLambdaVersionjqqeXsMVih1cHxqtTVsMknszbcsnBpbxJKVp8Mwio"
         },
         "DeleteNewFilmFunction": {
           "name": "DeleteNewFilmFunction",
@@ -1716,7 +2391,107 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "DeleteNewFilmFunctionLambdaVersionIkUARWISI918PBK7qZ4L65ChUHBNiRr2KD2cdvnu4"
+          "versionLogicalId": "DeleteNewFilmFunctionLambdaVersionPVi1ohUNkzt4Xsl2rTt3HuCIVvPjGahQqIDc5DeH0"
+        },
+        "GetNewPeopleFunction": {
+          "name": "GetNewPeopleFunction",
+          "handler": "dist/main.handler",
+          "timeout": 30,
+          "events": [
+            {
+              "httpApi": {
+                "path": "/new/people",
+                "method": "get"
+              },
+              "resolvedMethod": "GET",
+              "resolvedPath": "/new/people"
+            }
+          ],
+          "package": {},
+          "memory": 1024,
+          "runtime": "nodejs18.x",
+          "vpc": {},
+          "versionLogicalId": "GetNewPeopleFunctionLambdaVersionr0pai0LUPbBWAaRlRqPqMKQT0Mg8ZxtATdTvkCIttVs"
+        },
+        "GetNewPeopleByIdFunction": {
+          "name": "GetNewPeopleByIdFunction",
+          "handler": "dist/main.handler",
+          "timeout": 30,
+          "events": [
+            {
+              "httpApi": {
+                "path": "/new/people/{id}",
+                "method": "get"
+              },
+              "resolvedMethod": "GET",
+              "resolvedPath": "/new/people/{id}"
+            }
+          ],
+          "package": {},
+          "memory": 1024,
+          "runtime": "nodejs18.x",
+          "vpc": {},
+          "versionLogicalId": "GetNewPeopleByIdFunctionLambdaVersioncnJtcxc6XoIpGqhmwF1sAUXbtm4h9GuhgYtbyE"
+        },
+        "CreateNewPeopleFunction": {
+          "name": "CreateNewPeopleFunction",
+          "handler": "dist/main.handler",
+          "timeout": 30,
+          "events": [
+            {
+              "httpApi": {
+                "path": "/new/people",
+                "method": "post"
+              },
+              "resolvedMethod": "POST",
+              "resolvedPath": "/new/people"
+            }
+          ],
+          "package": {},
+          "memory": 1024,
+          "runtime": "nodejs18.x",
+          "vpc": {},
+          "versionLogicalId": "CreateNewPeopleFunctionLambdaVersion03Jwbu21uuKIQ0DlKqWfZx2QqAWJEHaGGn5db1zGo"
+        },
+        "UpdateNewPeopleFunction": {
+          "name": "UpdateNewPeopleFunction",
+          "handler": "dist/main.handler",
+          "timeout": 30,
+          "events": [
+            {
+              "httpApi": {
+                "path": "/new/people/{id}",
+                "method": "put"
+              },
+              "resolvedMethod": "PUT",
+              "resolvedPath": "/new/people/{id}"
+            }
+          ],
+          "package": {},
+          "memory": 1024,
+          "runtime": "nodejs18.x",
+          "vpc": {},
+          "versionLogicalId": "UpdateNewPeopleFunctionLambdaVersionR53PaL36yTtrUHpGIOrQ6D4o2K5qlDWm2vRbTYKxU"
+        },
+        "DeleteNewPeopleFunction": {
+          "name": "DeleteNewPeopleFunction",
+          "handler": "dist/main.handler",
+          "timeout": 30,
+          "events": [
+            {
+              "httpApi": {
+                "path": "/new/people/{id}",
+                "method": "delete"
+              },
+              "resolvedMethod": "DELETE",
+              "resolvedPath": "/new/people/{id}"
+            }
+          ],
+          "package": {},
+          "memory": 1024,
+          "runtime": "nodejs18.x",
+          "vpc": {},
+          "versionLogicalId": "DeleteNewPeopleFunctionLambdaVersionNVBmZy6r1PDcprgD0XfqC3xUqZngdt3oT2D31LPHPFA"
         },
         "GetOldFilmsFunction": {
           "name": "GetOldFilmsFunction",
@@ -1736,7 +2511,7 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "GetOldFilmsFunctionLambdaVersionXobOsvrMhwmYe810ui3fA4thbx6OlLG74IiMGZWQ"
+          "versionLogicalId": "GetOldFilmsFunctionLambdaVersioneCkcmaM4utHC7NehL6QIElCxmTNnQ5idFdx0dgQAY"
         },
         "GetOldFilmsByIdFunction": {
           "name": "GetOldFilmsByIdFunction",
@@ -1756,7 +2531,7 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "GetOldFilmsByIdFunctionLambdaVersion6Qk9ekA6e9OvQKBFjvOp23woSM57lsrRHZAPKpGAIM"
+          "versionLogicalId": "GetOldFilmsByIdFunctionLambdaVersionEZnixxFOr4VArNhfc66ozOXNSsi8Q4pbd7Q6LjWuxg0"
         },
         "GetOldPeopleFunction": {
           "name": "GetOldPeopleFunction",
@@ -1776,7 +2551,7 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "GetOldPeopleFunctionLambdaVersionR53FxVh5vzqI1AkoozaWxThNR7P8u98xuNu9Fusbm8"
+          "versionLogicalId": "GetOldPeopleFunctionLambdaVersionKF4UJihV2jkgWmxEGpr4fuBsZRztbCYuDoOnf0ojk"
         },
         "GetOldPeopleByIdFunction": {
           "name": "GetOldPeopleByIdFunction",
@@ -1796,7 +2571,7 @@
           "memory": 1024,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "GetOldPeopleByIdFunctionLambdaVersioni7KoJhk2BVN0zJKWuJYvOyI5ddfTE2OeFUauxKuYg"
+          "versionLogicalId": "GetOldPeopleByIdFunctionLambdaVersionoEtKTRa2Og11IRvOOdoG3aW3eAsLBZVpjVr2Qvd8U"
         }
       },
       "resources": {
@@ -1865,7 +2640,7 @@
         "Outputs": {}
       }
     },
-    "serviceRawFile": "service: serverless-app\r\n\r\n# plugins:\r\n#   - serverless-openapi-documentation\r\n#   - serverless-offline\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs18.x\r\n  profile: alvaro\r\n  environment:\r\n    STAR_WARS_TABLE: StarWarsEntitiesTable\r\n    COUNTER_TABLE: CounterStarWarsEntitiesTable\r\n  iamRoleStatements:\r\n    - Effect: Allow\r\n      Action:\r\n        - dynamodb:*\r\n      Resource:\r\n        - !GetAtt StarWarsEntitiesTable.Arn\r\n        - !GetAtt CounterStarWarsEntitiesTable.Arn\r\n        - !Join \r\n            - \"\"\r\n            - - !GetAtt StarWarsEntitiesTable.Arn\r\n              - \"/index/EntidadIndex\" \r\n\r\ncustom:\r\n  documentation:\r\n    api:\r\n      info:\r\n        title: My API\r\n        version: '1.0.0'\r\n        description: API documentation for my serverless application.\r\n      paths:\r\n        /new/films:\r\n          get:\r\n            summary: Get all custom new films\r\n            description: Retrieve a list of custom new films.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n          post:\r\n            summary: Create a custom new film\r\n            description: Create a custom new film.\r\n            responses:\r\n              '201':\r\n                description: Film created successfully\r\n        /new/films/{id}:\r\n          get:\r\n            summary: Get a custom new film by its id\r\n            description: Retrieve a custom new film by its id.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n          put:\r\n            summary: Update a custom new film\r\n            description: Update a custom new film.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n          delete:\r\n            summary: Delete a custom new film\r\n            description: Delete a custom new film.\r\n            responses:\r\n              '204':\r\n                description: Film deleted successfully\r\n        /old/films:\r\n          get:\r\n            summary: Get all films from original swapi\r\n            description: Get all films from original swapi.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n        /old/films/{id}:\r\n          get:\r\n            summary: Get a film from original swapi by its id\r\n            description: Get a film from original swapi by its id.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n        /old/people:\r\n          get:\r\n            summary: Get all people from original swapi\r\n            description: Get all people from original swapi.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n        /old/people/{id}:\r\n          get:\r\n            summary: Get people from original swapi by its id\r\n            description: Get people from original swapi by its id.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n\r\nfunctions:\r\n  # NEW DATA:\r\n  GetNewFilmsFunction:\r\n    name: GetNewFilmsFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films\r\n          method: get\r\n  GetNewFilmByIdFunction:\r\n    name: GetNewFilmByIdFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films/{id}\r\n          method: get\r\n  CreateNewFilmFunction:\r\n    name: CreateNewFilmFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films\r\n          method: post\r\n  UpdateNewFilmFunction:\r\n    name: UpdateNewFilmFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films/{id}\r\n          method: put\r\n  DeleteNewFilmFunction:\r\n    name: DeleteNewFilmFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films/{id}\r\n          method: delete\r\n  \r\n  # OLD DATA:\r\n  GetOldFilmsFunction:\r\n    name: GetOldFilmsFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /old/films\r\n          method: get\r\n  GetOldFilmsByIdFunction:\r\n    name: GetOldFilmsByIdFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /old/films/{id}\r\n          method: get\r\n  \r\n  GetOldPeopleFunction:\r\n    name: GetOldPeopleFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /old/people\r\n          method: get\r\n  GetOldPeopleByIdFunction:\r\n    name: GetOldPeopleByIdFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /old/people/{id}\r\n          method: get\r\n\r\nresources:\r\n  Resources:\r\n    StarWarsEntitiesTable:\r\n      Type: AWS::DynamoDB::Table\r\n      Properties:\r\n        TableName: StarWarsEntitiesTable\r\n        BillingMode: PAY_PER_REQUEST\r\n        AttributeDefinitions:\r\n          - AttributeName: id\r\n            AttributeType: S\r\n          - AttributeName: entidad\r\n            AttributeType: S\r\n        KeySchema:\r\n          - AttributeName: id\r\n            KeyType: HASH\r\n          - AttributeName: entidad\r\n            KeyType: RANGE\r\n        GlobalSecondaryIndexes:\r\n          - IndexName: EntidadIndex\r\n            KeySchema:\r\n              - AttributeName: entidad\r\n                KeyType: HASH\r\n            Projection:\r\n              ProjectionType: ALL\r\n    CounterStarWarsEntitiesTable:\r\n      Type: AWS::DynamoDB::Table\r\n      Properties:\r\n        TableName: \"CounterStarWarsEntitiesTable\"\r\n        AttributeDefinitions:\r\n          - AttributeName: entidad\r\n            AttributeType: S\r\n        KeySchema:\r\n          - AttributeName: entidad\r\n            KeyType: HASH\r\n        BillingMode: PAY_PER_REQUEST",
+    "serviceRawFile": "service: serverless-app\r\n\r\n# plugins:\r\n#   - serverless-openapi-documentation\r\n#   - serverless-offline\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs18.x\r\n  profile: alvaro\r\n  environment:\r\n    STAR_WARS_TABLE: StarWarsEntitiesTable\r\n    COUNTER_TABLE: CounterStarWarsEntitiesTable\r\n  iamRoleStatements:\r\n    - Effect: Allow\r\n      Action:\r\n        - dynamodb:*\r\n      Resource:\r\n        - !GetAtt StarWarsEntitiesTable.Arn\r\n        - !GetAtt CounterStarWarsEntitiesTable.Arn\r\n        - !Join \r\n            - \"\"\r\n            - - !GetAtt StarWarsEntitiesTable.Arn\r\n              - \"/index/EntidadIndex\" \r\n\r\ncustom:\r\n  documentation:\r\n    api:\r\n      info:\r\n        title: My API\r\n        version: '1.0.0'\r\n        description: API documentation for my serverless application.\r\n      paths:\r\n        /new/films:\r\n          get:\r\n            summary: Get all custom new films\r\n            description: Retrieve a list of custom new films.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n          post:\r\n            summary: Create a custom new film\r\n            description: Create a custom new film.\r\n            responses:\r\n              '201':\r\n                description: Film created successfully\r\n        /new/films/{id}:\r\n          get:\r\n            summary: Get a custom new film by its id\r\n            description: Retrieve a custom new film by its id.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n          put:\r\n            summary: Update a custom new film\r\n            description: Update a custom new film.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n          delete:\r\n            summary: Delete a custom new film\r\n            description: Delete a custom new film.\r\n            responses:\r\n              '204':\r\n                description: Film deleted successfully\r\n        /old/films:\r\n          get:\r\n            summary: Get all films from original swapi\r\n            description: Get all films from original swapi.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n        /old/films/{id}:\r\n          get:\r\n            summary: Get a film from original swapi by its id\r\n            description: Get a film from original swapi by its id.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n        /old/people:\r\n          get:\r\n            summary: Get all people from original swapi\r\n            description: Get all people from original swapi.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n        /old/people/{id}:\r\n          get:\r\n            summary: Get people from original swapi by its id\r\n            description: Get people from original swapi by its id.\r\n            responses:\r\n              '200':\r\n                description: Successful response\r\n\r\nfunctions:\r\n  # NEW DATA:\r\n  GetNewFilmsFunction:\r\n    name: GetNewFilmsFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films\r\n          method: get\r\n  GetNewFilmByIdFunction:\r\n    name: GetNewFilmByIdFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films/{id}\r\n          method: get\r\n  CreateNewFilmFunction:\r\n    name: CreateNewFilmFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films\r\n          method: post\r\n  UpdateNewFilmFunction:\r\n    name: UpdateNewFilmFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films/{id}\r\n          method: put\r\n  DeleteNewFilmFunction:\r\n    name: DeleteNewFilmFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/films/{id}\r\n          method: delete\r\n  \r\n  GetNewPeopleFunction:\r\n    name: GetNewPeopleFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/people\r\n          method: get\r\n  GetNewPeopleByIdFunction:\r\n    name: GetNewPeopleByIdFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/people/{id}\r\n          method: get\r\n  CreateNewPeopleFunction:\r\n    name: CreateNewPeopleFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/people\r\n          method: post\r\n  UpdateNewPeopleFunction:\r\n    name: UpdateNewPeopleFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/people/{id}\r\n          method: put\r\n  DeleteNewPeopleFunction:\r\n    name: DeleteNewPeopleFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /new/people/{id}\r\n          method: delete\r\n  \r\n  # OLD DATA:\r\n  GetOldFilmsFunction:\r\n    name: GetOldFilmsFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /old/films\r\n          method: get\r\n  GetOldFilmsByIdFunction:\r\n    name: GetOldFilmsByIdFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /old/films/{id}\r\n          method: get\r\n  \r\n  GetOldPeopleFunction:\r\n    name: GetOldPeopleFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /old/people\r\n          method: get\r\n  GetOldPeopleByIdFunction:\r\n    name: GetOldPeopleByIdFunction\r\n    handler: dist/main.handler\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /old/people/{id}\r\n          method: get\r\n\r\nresources:\r\n  Resources:\r\n    StarWarsEntitiesTable:\r\n      Type: AWS::DynamoDB::Table\r\n      Properties:\r\n        TableName: StarWarsEntitiesTable\r\n        BillingMode: PAY_PER_REQUEST\r\n        AttributeDefinitions:\r\n          - AttributeName: id\r\n            AttributeType: S\r\n          - AttributeName: entidad\r\n            AttributeType: S\r\n        KeySchema:\r\n          - AttributeName: id\r\n            KeyType: HASH\r\n          - AttributeName: entidad\r\n            KeyType: RANGE\r\n        GlobalSecondaryIndexes:\r\n          - IndexName: EntidadIndex\r\n            KeySchema:\r\n              - AttributeName: entidad\r\n                KeyType: HASH\r\n            Projection:\r\n              ProjectionType: ALL\r\n    CounterStarWarsEntitiesTable:\r\n      Type: AWS::DynamoDB::Table\r\n      Properties:\r\n        TableName: \"CounterStarWarsEntitiesTable\"\r\n        AttributeDefinitions:\r\n          - AttributeName: entidad\r\n            AttributeType: S\r\n        KeySchema:\r\n          - AttributeName: entidad\r\n            KeyType: HASH\r\n        BillingMode: PAY_PER_REQUEST",
     "command": [
       "deploy"
     ],
@@ -1903,68 +2678,68 @@
     "serviceUniqueId": "arn:aws:cloudformation:us-east-1:953796120221:stack/serverless-app-dev/462354d0-9234-11ef-b864-0e78da857aef",
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:953796120221:stack/serverless-app-dev/462354d0-9234-11ef-b864-0e78da857aef",
     "serviceProviderAwsCfStackCreated": "2024-10-24T18:17:48.551Z",
-    "serviceProviderAwsCfStackUpdated": "2024-10-25T10:14:45.347Z",
+    "serviceProviderAwsCfStackUpdated": "2024-10-25T10:27:16.061Z",
     "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "GetOldFilmsByIdFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetOldFilmsByIdFunction:26",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetOldFilmsByIdFunction:27",
         "Description": "Current Lambda function version",
         "ExportName": "sls-serverless-app-dev-GetOldFilmsByIdFunctionLambdaFunctionQualifiedArn"
       },
       {
-        "OutputKey": "GetOldPeopleByIdFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetOldPeopleByIdFunction:26",
+        "OutputKey": "UpdateNewPeopleFunctionLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:UpdateNewPeopleFunction:2",
         "Description": "Current Lambda function version",
-        "ExportName": "sls-serverless-app-dev-GetOldPeopleByIdFunctionLambdaFunctionQualifiedArn"
-      },
-      {
-        "OutputKey": "DeleteNewFilmFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:DeleteNewFilmFunction:26",
-        "Description": "Current Lambda function version",
-        "ExportName": "sls-serverless-app-dev-DeleteNewFilmFunctionLambdaFunctionQualifiedArn"
+        "ExportName": "sls-serverless-app-dev-UpdateNewPeopleFunctionLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "CreateNewFilmFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:CreateNewFilmFunction:26",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:CreateNewFilmFunction:27",
         "Description": "Current Lambda function version",
         "ExportName": "sls-serverless-app-dev-CreateNewFilmFunctionLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "GetOldPeopleFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetOldPeopleFunction:26",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetOldPeopleFunction:27",
         "Description": "Current Lambda function version",
         "ExportName": "sls-serverless-app-dev-GetOldPeopleFunctionLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "GetNewFilmsFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetNewFilmsFunction:26",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetNewFilmsFunction:27",
         "Description": "Current Lambda function version",
         "ExportName": "sls-serverless-app-dev-GetNewFilmsFunctionLambdaFunctionQualifiedArn"
       },
       {
-        "OutputKey": "GetNewFilmByIdFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetNewFilmByIdFunction:26",
+        "OutputKey": "GetNewPeopleByIdFunctionLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetNewPeopleByIdFunction:2",
         "Description": "Current Lambda function version",
-        "ExportName": "sls-serverless-app-dev-GetNewFilmByIdFunctionLambdaFunctionQualifiedArn"
+        "ExportName": "sls-serverless-app-dev-GetNewPeopleByIdFunctionLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "GetNewPeopleFunctionLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetNewPeopleFunction:2",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-serverless-app-dev-GetNewPeopleFunctionLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "CreateNewPeopleFunctionLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:CreateNewPeopleFunction:2",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-serverless-app-dev-CreateNewPeopleFunctionLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "DeleteNewPeopleFunctionLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:DeleteNewPeopleFunction:2",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-serverless-app-dev-DeleteNewPeopleFunctionLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "HttpApiId",
         "OutputValue": "v6vg77yxwi",
         "Description": "Id of the HTTP API",
         "ExportName": "sls-serverless-app-dev-HttpApiId"
-      },
-      {
-        "OutputKey": "UpdateNewFilmFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:UpdateNewFilmFunction:26",
-        "Description": "Current Lambda function version",
-        "ExportName": "sls-serverless-app-dev-UpdateNewFilmFunctionLambdaFunctionQualifiedArn"
-      },
-      {
-        "OutputKey": "GetOldFilmsFunctionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetOldFilmsFunction:26",
-        "Description": "Current Lambda function version",
-        "ExportName": "sls-serverless-app-dev-GetOldFilmsFunctionLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "ServerlessDeploymentBucketName",
@@ -1976,6 +2751,36 @@
         "OutputValue": "https://v6vg77yxwi.execute-api.us-east-1.amazonaws.com",
         "Description": "URL of the HTTP API",
         "ExportName": "sls-serverless-app-dev-HttpApiUrl"
+      },
+      {
+        "OutputKey": "GetOldPeopleByIdFunctionLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetOldPeopleByIdFunction:27",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-serverless-app-dev-GetOldPeopleByIdFunctionLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "DeleteNewFilmFunctionLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:DeleteNewFilmFunction:27",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-serverless-app-dev-DeleteNewFilmFunctionLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "GetNewFilmByIdFunctionLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetNewFilmByIdFunction:27",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-serverless-app-dev-GetNewFilmByIdFunctionLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "UpdateNewFilmFunctionLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:UpdateNewFilmFunction:27",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-serverless-app-dev-UpdateNewFilmFunctionLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "GetOldFilmsFunctionLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:953796120221:function:GetOldFilmsFunction:27",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-serverless-app-dev-GetOldFilmsFunctionLambdaFunctionQualifiedArn"
       }
     ]
   }

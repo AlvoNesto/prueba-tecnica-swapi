@@ -22,7 +22,7 @@ export class PeopleDto {
   @IsNotEmpty()
   skin_color: string;
 
-  @IsInt()
+  @IsString()
   @IsNotEmpty()
   eye_color: number;
 
