@@ -3,7 +3,7 @@ import { Film } from '../../domain/entities/films.entity';
 export class FilmMapper {
 
   toSpanish(film: Film): any {
-    return {
+    const result = {
       titulo: film.title,
       episodio_id: film.episode_id,
       texto_apertura: film.opening_crawl,
@@ -18,5 +18,8 @@ export class FilmMapper {
       editado: film.edited,
       url: film.url
     }
+    if (film.id)
+      result["id"] = film.id;
+    return result
   }
 }

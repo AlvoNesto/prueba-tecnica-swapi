@@ -3,7 +3,7 @@ import { People } from '../../domain/entities/people.entity';
 export class PeopleMapper {
 
   toSpanish(people: People): any {
-    return {
+    const result = {
       nombre: people.name,
       altura: people.height,
       peso: people.mass,
@@ -21,5 +21,8 @@ export class PeopleMapper {
       editado: people.edited,
       url: people.url
     }
+    if (people.id)
+      result["id"] = people.id;
+    return result
   }
 }
