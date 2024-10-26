@@ -34,25 +34,28 @@ export class FilmsService {
     return this.filmMapper.toSpanish(film);
   }
 
-  async createDBFilm(filmDto: FilmDto): Promise<Film> {
+  async createDBFilm(filmDto: FilmDto): Promise<string> {
     const film: Film = new Film(filmDto);
-    return await this.filmRepository.createDBFilm(film);
+    const id = await this.filmRepository.createDBFilm(film);
+    return `Film with ID ${id} was created successfully. Use path GET:'/new/films/${id} to view it.'`;
   }
 
-  async updateDBFilm(id: string, filmDto: FilmDto): Promise<Film> {
+  async updateDBFilm(id: string, filmDto: FilmDto): Promise<string> {
     const film: Film = new Film(filmDto);
     const existingFilm = await this.filmRepository.getDBFilmById(id);
     if (!existingFilm) {
       throw new NotFoundException(`Film with ID ${id} not found`);
     }
-    return await this.filmRepository.updateDBFilm(id, film);
+    await this.filmRepository.updateDBFilm(id, film);
+    return `Film with ID ${id} was updated successfully. Use path GET:'/new/films/${id} to view it.'`;
   }
 
-  async deleteDBFilm(id: string): Promise<void> {
+  async deleteDBFilm(id: string): Promise<string> {
     const film = await this.filmRepository.getDBFilmById(id);
     if (!film) {
       throw new NotFoundException(`Film with ID ${id} not found`);
     }
     await this.filmRepository.deleteDBFilm(id);
+    return `Film with ID ${id} was deleted successfully`
   }
 }

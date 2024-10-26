@@ -19,18 +19,18 @@ export class NewPeopleController {
 
   @Post()
   @UsePipes(new ValidationPipe({ transform: true }))
-  async createPeople(@Body() people: PeopleDto): Promise<People> {
+  async createPeople(@Body() people: PeopleDto): Promise<string> {
     return await this.peopleService.createDBPeople(people);
   }
 
   @Put(':id')
   @UsePipes(new ValidationPipe({ transform: true }))
-  async updatePeople(@Param('id') id: string, @Body() people: PeopleDto): Promise<People> {
+  async updatePeople(@Param('id') id: string, @Body() people: PeopleDto): Promise<string> {
     return await this.peopleService.updateDBPeople(id, people);
   }
 
   @Delete(':id')
-  async deletePeople(@Param('id') id: string): Promise<void> {
-    await this.peopleService.deleteDBPeople(id);
+  async deletePeople(@Param('id') id: string): Promise<string> {
+    return await this.peopleService.deleteDBPeople(id);
   }
 }

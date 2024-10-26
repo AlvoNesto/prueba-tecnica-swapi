@@ -31,7 +31,7 @@ export interface IPeopleRepository {
    * @param people - Los datos de la película a crear.
    * @returns La película creada.
    */
-  createDBPeople(people: People): Promise<People>;
+  createDBPeople(people: People): Promise<string>;
 
   /**
    * Actualiza una película existente.
@@ -39,12 +39,12 @@ export interface IPeopleRepository {
    * @param people - Los nuevos datos de la película.
    * @returns La película actualizada o `null` si no se encuentra.
    */
-  updateDBPeople(id: string, people: People): Promise<People>;
+  updateDBPeople(id: string, people: People): Promise<string>;
 
   /**
    * Elimina una película por su ID.
    * @param id - El ID de la película.
    * @returns Un booleano indicando si la película fue eliminada con éxito.
    */
-  deleteDBPeople(id: string): Promise<boolean>;
+  deleteDBPeople(id: string): Promise<string>;
 }

@@ -31,7 +31,7 @@ export interface IFilmsRepository {
    * @param film - Los datos de la película a crear.
    * @returns La película creada.
    */
-  createDBFilm(film: Film): Promise<Film>;
+  createDBFilm(film: Film): Promise<string>;
 
   /**
    * Actualiza una película existente.
@@ -39,12 +39,12 @@ export interface IFilmsRepository {
    * @param film - Los nuevos datos de la película.
    * @returns La película actualizada o `null` si no se encuentra.
    */
-  updateDBFilm(id: string, film: Film): Promise<Film>;
+  updateDBFilm(id: string, film: Film): Promise<string>;
 
   /**
    * Elimina una película por su ID.
    * @param id - El ID de la película.
    * @returns Un booleano indicando si la película fue eliminada con éxito.
    */
-  deleteDBFilm(id: string): Promise<boolean>;
+  deleteDBFilm(id: string): Promise<string>;
 }

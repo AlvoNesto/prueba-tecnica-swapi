@@ -60,7 +60,7 @@ export class PeopleRepository implements IPeopleRepository {
     const result = await this.dynamoDb.get(params).promise();
     return result.Item ? new People(result.Item) : null;
 }
-  async createDBPeople(people: People): Promise<People> {
+  async createDBPeople(people: People): Promise<string> {
     people.id = await this.getNextId();
     people.entidad = "people";
     const params = {
@@ -68,10 +68,10 @@ export class PeopleRepository implements IPeopleRepository {
       Item: people,
     };
     await this.dynamoDb.put(params).promise();
-    return people;
+    return people.id;
   }
 
-  async updateDBPeople(id: string, people: People): Promise<People> {
+  async updateDBPeople(id: string, people: People): Promise<string> {
     const params = {
       TableName: this.starWarsTableName,
       Key: { id, entidad: "people" },
@@ -115,17 +115,17 @@ export class PeopleRepository implements IPeopleRepository {
       ReturnValues: 'ALL_NEW',
     };
 
-    const result = await this.dynamoDb.update(params).promise();
-    return new People(result.Attributes);
+    await this.dynamoDb.update(params).promise();
+    return id;
   }
 
-  async deleteDBPeople(id: string): Promise<boolean> {
+  async deleteDBPeople(id: string): Promise<string> {
     const params = {
       TableName: this.starWarsTableName,
       Key: { id, entidad: "people" },
     };
     await this.dynamoDb.delete(params).promise();
-    return true;
+    return id;
   }
 
   async getNextId(): Promise<string> {

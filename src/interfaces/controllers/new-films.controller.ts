@@ -19,18 +19,18 @@ export class NewFilmsController {
 
   @Post()
   @UsePipes(new ValidationPipe({ transform: true }))
-  async createFilm(@Body() film: FilmDto): Promise<Film> {
+  async createFilm(@Body() film: FilmDto): Promise<string> {
     return await this.filmService.createDBFilm(film);
   }
 
   @Put(':id')
   @UsePipes(new ValidationPipe({ transform: true }))
-  async updateFilm(@Param('id') id: string, @Body() film: FilmDto): Promise<Film> {
+  async updateFilm(@Param('id') id: string, @Body() film: FilmDto): Promise<string> {
     return await this.filmService.updateDBFilm(id, film);
   }
 
   @Delete(':id')
-  async deleteFilm(@Param('id') id: string): Promise<void> {
-    await this.filmService.deleteDBFilm(id);
+  async deleteFilm(@Param('id') id: string): Promise<string> {
+    return await this.filmService.deleteDBFilm(id);
   }
 }

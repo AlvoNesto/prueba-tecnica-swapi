@@ -60,7 +60,7 @@ export class FilmsRepository implements IFilmsRepository {
     const result = await this.dynamoDb.get(params).promise();
     return result.Item ? new Film(result.Item) : null;
 }
-  async createDBFilm(film: Film): Promise<Film> {
+  async createDBFilm(film: Film): Promise<string> {
     film.id = await this.getNextId();
     film.entidad = "film";
     const params = {
@@ -68,10 +68,10 @@ export class FilmsRepository implements IFilmsRepository {
       Item: film,
     };
     await this.dynamoDb.put(params).promise();
-    return film;
+    return film.id;
   }
 
-  async updateDBFilm(id: string, film: Film): Promise<Film> {
+  async updateDBFilm(id: string, film: Film): Promise<string> {
     const params = {
       TableName: this.starWarsTableName,
       Key: { id, entidad: "film" },
@@ -111,17 +111,17 @@ export class FilmsRepository implements IFilmsRepository {
       ReturnValues: 'ALL_NEW',
     };
 
-    const result = await this.dynamoDb.update(params).promise();
-    return new Film(result.Attributes);
+    await this.dynamoDb.update(params).promise();
+    return id;
   }
 
-  async deleteDBFilm(id: string): Promise<boolean> {
+  async deleteDBFilm(id: string): Promise<string> {
     const params = {
       TableName: this.starWarsTableName,
       Key: { id, entidad: "film" },
     };
     await this.dynamoDb.delete(params).promise();
-    return true;
+    return id;
   }
 
   async getNextId(): Promise<string> {
